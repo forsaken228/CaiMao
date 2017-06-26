@@ -144,12 +144,23 @@
    
     msgLabel.textAlignment=NSTextAlignmentCenter;
     [self.view addSubview:msgLabel];
-    [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(14);
-        make.width.mas_equalTo(CMScreenW);
-        make.top.equalTo(infoView.mas_bottom).offset(40);
-        make.centerX.equalTo(self.view.mas_centerX);
-    }];
+    
+    if(CMScreenH<=568){
+        [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(14);
+            make.width.mas_equalTo(CMScreenW);
+            make.top.equalTo(infoView.mas_bottom).offset(25);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
+    }else{
+        
+        [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(14);
+            make.width.mas_equalTo(CMScreenW);
+            make.top.equalTo(infoView.mas_bottom).offset(40);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
+    }
     if (self.isYanZheng) {
         [self.msgLabel showNormalMsg:@"请输入新的手势密码"];
 

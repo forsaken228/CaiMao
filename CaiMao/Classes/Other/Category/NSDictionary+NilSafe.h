@@ -15,7 +15,10 @@
 @interface NSMutableDictionary (NilSafe)
 
 @end
-//
-//@interface NSNull (NilSafe)
-//
-//@end
+
+@interface NSNull (NilSafe)
+
+@end
+@interface NSObject (Swizzling)
+
+@end

@@ -143,20 +143,19 @@ CMSingletonM(CMVenderConfiguration)
          switch (platformType)
          {
              case SSDKPlatformTypeSinaWeibo:
-                 //设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
-                 [appInfo SSDKSetupSinaWeiboByAppKey:@"568898243"
-                                           appSecret:@"38a4f8204cc784f81f9f0daaf31e02e3"
-                                         redirectUri:@"http://www.sharesdk.cn"
+                 // 设置新浪微博应用信息,其中authType设置为使用SSO＋Web形式授权
+                 [appInfo SSDKSetupSinaWeiboByAppKey:@"376421421"
+                                           appSecret:@"7ebaab095b6ec20e5fa8665f5b14219a"
+                                         redirectUri:@"http://www.58cm.com"
                                             authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wx4868b35061f87885"
-                                       appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                 [appInfo SSDKSetupWeChatByAppId:@"wx9e97b3dbdac46bfe"
+                                       appSecret:@"4a03f22ec20c2c50e5e049118b6ffda9"];
                  break;
+                 //QQ
              case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"100371282"
-                                      appKey:@"aed9b0303e3ed1e27bae87c33761161d"
-                                    authType:SSDKAuthTypeBoth];
+                 [appInfo SSDKSetupQQByAppId:@"1104914591" appKey:@"pMNrwdG3DQruX2Bh" authType:SSDKAuthTypeBoth];
                  break;
 
              default:

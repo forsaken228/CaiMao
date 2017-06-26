@@ -11,6 +11,3 @@
 @interface NSArray (CMArray)
 -(id)objectAtIndexCheack:(NSUInteger)index;
 @end
-@interface NSMutableArray (CMMutableArray)
-
-@end

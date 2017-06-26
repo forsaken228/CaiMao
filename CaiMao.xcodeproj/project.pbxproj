@@ -28,6 +28,7 @@
 		04143B7E1F00E5A7005B810E /* UILabel+PPCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = 04143B7D1F00E5A7005B810E /* UILabel+PPCounter.m */; };
 		04143B801F00E7C3005B810E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04143B7F1F00E7C2005B810E /* CoreTelephony.framework */; };
 		04143B821F00E802005B810E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04143B811F00E802005B810E /* MediaPlayer.framework */; };
+		04143B851F00FFB4005B810E /* NSDictionary+NilSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 04143B841F00FFB3005B810E /* NSDictionary+NilSafe.m */; };
 		0414AB901D50919B00CC0F0A /* vip_putong@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0414AB841D50919B00CC0F0A /* vip_putong@2x.png */; };
 		0414AB911D50919B00CC0F0A /* vip_putong@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0414AB851D50919B00CC0F0A /* vip_putong@3x.png */; };
 		0414AB921D50919B00CC0F0A /* vip1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0414AB861D50919B00CC0F0A /* vip1@2x.png */; };
@@ -580,7 +581,6 @@
 		0486D8371DBF3A1B00342B4F /* CMCheackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486D8361DBF3A1B00342B4F /* CMCheackController.m */; };
 		0486D83B1DBF3BCA00342B4F /* CMChagePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486D83A1DBF3BCA00342B4F /* CMChagePhoto.m */; };
 		0486D83E1DBF4F3E00342B4F /* SHFail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0486D83D1DBF4F3E00342B4F /* SHFail@3x.png */; };
-		048761EB1EF8AB8F002562EE /* NSDictionary+NilSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 048761EA1EF8AB8F002562EE /* NSDictionary+NilSafe.m */; };
 		0488AF0D1D73D7C300796818 /* zfcg_chengong_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0B1D73D7C300796818 /* zfcg_chengong_icon@2x.png */; };
 		0488AF0E1D73D7C300796818 /* zfcg_chengong_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0C1D73D7C300796818 /* zfcg_chengong_icon@3x.png */; };
 		0488AF151D73DC5F00796818 /* zfcg_ljgd_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0F1D73DC5F00796818 /* zfcg_ljgd_icon@2x.png */; };
@@ -885,6 +885,8 @@
 		04143B7D1F00E5A7005B810E /* UILabel+PPCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+PPCounter.m"; sourceTree = "<group>"; };
 		04143B7F1F00E7C2005B810E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		04143B811F00E802005B810E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		04143B831F00FFB3005B810E /* NSDictionary+NilSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NilSafe.h"; sourceTree = "<group>"; };
+		04143B841F00FFB3005B810E /* NSDictionary+NilSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NilSafe.m"; sourceTree = "<group>"; };
 		0414AB841D50919B00CC0F0A /* vip_putong@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vip_putong@2x.png"; path = "../vip_putong@2x.png"; sourceTree = "<group>"; };
 		0414AB851D50919B00CC0F0A /* vip_putong@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vip_putong@3x.png"; path = "../vip_putong@3x.png"; sourceTree = "<group>"; };
 		0414AB861D50919B00CC0F0A /* vip1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vip1@2x.png"; path = "../vip1@2x.png"; sourceTree = "<group>"; };
@@ -1657,8 +1659,6 @@
 		0486D8391DBF3BCA00342B4F /* CMChagePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChagePhoto.h; sourceTree = "<group>"; };
 		0486D83A1DBF3BCA00342B4F /* CMChagePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChagePhoto.m; sourceTree = "<group>"; };
 		0486D83D1DBF4F3E00342B4F /* SHFail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHFail@3x.png"; sourceTree = "<group>"; };
-		048761E91EF8AB8F002562EE /* NSDictionary+NilSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NilSafe.h"; sourceTree = "<group>"; };
-		048761EA1EF8AB8F002562EE /* NSDictionary+NilSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NilSafe.m"; sourceTree = "<group>"; };
 		0488AF0B1D73D7C300796818 /* zfcg_chengong_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_chengong_icon@2x.png"; sourceTree = "<group>"; };
 		0488AF0C1D73D7C300796818 /* zfcg_chengong_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_chengong_icon@3x.png"; sourceTree = "<group>"; };
 		0488AF0F1D73DC5F00796818 /* zfcg_ljgd_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_ljgd_icon@2x.png"; sourceTree = "<group>"; };
@@ -3839,8 +3839,8 @@
 				0483C41A1E837201006B7E9E /* UIViewController+CMHubView.m */,
 				049252661EE14C6E00D07B54 /* UIViewController+Statistical.h */,
 				049252671EE14C6E00D07B54 /* UIViewController+Statistical.m */,
-				048761E91EF8AB8F002562EE /* NSDictionary+NilSafe.h */,
-				048761EA1EF8AB8F002562EE /* NSDictionary+NilSafe.m */,
+				04143B831F00FFB3005B810E /* NSDictionary+NilSafe.h */,
+				04143B841F00FFB3005B810E /* NSDictionary+NilSafe.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -5327,6 +5327,7 @@
 				50D4E4471C3CAA4000D597A7 /* CMXinKeList.m in Sources */,
 				50BBB02F1C81376400BA65E7 /* CMRefreshHeader.m in Sources */,
 				046BE21C1DC9BAB700B037DB /* CMHelpViewCell.m in Sources */,
+				04143B851F00FFB4005B810E /* NSDictionary+NilSafe.m in Sources */,
 				046725D31DD5629C00A77097 /* CMZhuanChuConfirmHeadView.m in Sources */,
 				042B06F41E84C9200055B422 /* CMAccountDespositTopView.m in Sources */,
 				046725DF1DD5767600A77097 /* CMZhuanChuSuccessFootView.m in Sources */,
@@ -5414,7 +5415,6 @@
 				50A269381A3A9AE900545B4A /* CMAccountViewController.m in Sources */,
 				044CF7BE1D3745E800C20396 /* CMChargeRecordController.m in Sources */,
 				046BE1C31DC984F500B037DB /* CMRegularJudement.m in Sources */,
-				048761EB1EF8AB8F002562EE /* NSDictionary+NilSafe.m in Sources */,
 				048FFF401DC1A42C005CF5DE /* CMDQLController.m in Sources */,
 				50C8F5BD1C045C04009A982F /* CMTehuiCell.m in Sources */,
 				0485E61F1E890FEE000BE46C /* CMChargeRecordModel.m in Sources */,
@@ -5699,18 +5699,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/usr/lib/libxml2.2.dylib",
-					"$(PROJECT_DIR)/usr/lib/libxml2.dylib",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib",
 					"$(PROJECT_DIR)/CaiMao/Classes/Other/Category",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/Required",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/ShareSDK",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/ShareSDK/Support/Optional",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/ShareSDK/Support/PlatformConnector",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/ShareSDK/Support/PlatformSDK/QQSDK",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/share/ShareSDK/Support/Required",
-					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib/Required",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5734,10 +5723,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-w",
-					"-lxml2",
-					"-lxml2.2",
 					"-objc",
-					"-all_load",
 					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.58cm.CaiMao;
@@ -5769,7 +5755,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/usr/lib/libxml2.dylib",
 					"$(PROJECT_DIR)/CaiMao/Classes/Other/Lib",
 				);
 				GCC_INPUT_FILETYPE = automatic;
@@ -5794,10 +5779,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-w",
-					"-lxml2",
-					"-lxml2.2",
 					"-objc",
-					"-all_load",
 					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.58cm.CaiMao;

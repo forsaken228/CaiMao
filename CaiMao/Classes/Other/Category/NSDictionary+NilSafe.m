@@ -37,7 +37,7 @@
 @end
 
 @implementation NSDictionary (NilSafe)
-/*
+
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -85,7 +85,7 @@
     }
     return [self gl_initWithObjects:safeObjects forKeys:safeKeys count:j];
 }
-*/
+
 @end
 
 @implementation NSMutableDictionary (NilSafe)
@@ -134,7 +134,7 @@
 }
 
 @end
-/*
+
 @implementation NSNull (NilSafe)
 
 
@@ -169,4 +169,4 @@
 }
 
 @end
-*/
+

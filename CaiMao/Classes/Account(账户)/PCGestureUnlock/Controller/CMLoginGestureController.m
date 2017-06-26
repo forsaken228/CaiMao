@@ -113,12 +113,24 @@
     msgLabel.textAlignment=NSTextAlignmentCenter;
     msgLabel.textColor=UIColorFromRGB(0x7c7c7c);
     [self.view addSubview:msgLabel];
-    [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(20);
-        make.width.mas_equalTo(CMScreenW);
-        make.top.equalTo(imageView.mas_bottom).offset(20);
-        make.centerX.equalTo(self.view.mas_centerX);
-    }];
+    
+    if(CMScreenH<=568){
+        [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(CMScreenW);
+            make.top.equalTo(imageView.mas_bottom);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
+    }else{
+        
+        [msgLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(20);
+            make.width.mas_equalTo(CMScreenW);
+            make.top.equalTo(imageView.mas_bottom).offset(20);
+            make.centerX.equalTo(self.view.mas_centerX);
+        }];
+    }
+   
     UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [leftBtn setTitle:@"忘记手势密码?" forState:UIControlStateNormal];
     [leftBtn addTarget:self action:@selector(didClickBtn:) forControlEvents:UIControlEventTouchUpInside];

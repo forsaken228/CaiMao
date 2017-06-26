@@ -152,7 +152,7 @@ void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void
 {
      DLog(@"didReceiveRemoteNotification");
  
-    //[CMVenderConfiguration handleRemoteNotification:userinfo completion:nil];
+    [CMVenderConfiguration handleRemoteNotification:userinfo completion:nil];
  
 }
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -215,7 +215,7 @@ void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void
  
     }
     
-  //  [CMVenderConfiguration handleRemoteNotification:userInfo completion:completionHandler];
+ [CMVenderConfiguration handleRemoteNotification:userInfo completion:completionHandler];
   
     
 }
