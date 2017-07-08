@@ -92,7 +92,7 @@
     self.view.backgroundColor=ViewBackColor;
     self.title=@"确认合同";
     
-    self.productFenE=[[self.ProuctListArr objectForKey:@"cpfe"] intValue];
+    self.productFenE=[[self.ProuctListDict objectForKey:@"cpfe"] intValue];
     self.userID = [CMUserDefaults valueForKey:@"userID"];
     self.phoneNum = [CMUserDefaults valueForKey:@"name"];
     self.yuer=[CMUserDefaults objectForKey:@"YuEr"];
@@ -112,7 +112,7 @@
     }
   [self creatView];
  //DLog(@"---self.phone==%@---self.userarr==%@---%@--%@",self.phoneNum,userArr,self.NewBankArr,self.ProuctListArr);
-  [self statisticalPage:[NSString stringWithFormat:@"%@+确认合同",[self.ProuctListArr objectForKey:@"title"]]];
+  [self statisticalPage:[NSString stringWithFormat:@"产品购买(%@)+%@",self.title,[self.ProuctListDict objectForKey:@"title"]]];
 }
 
 #pragma mark 创建视图
@@ -123,8 +123,8 @@
   
     _middleView=[[CMMiddelView alloc]init];
     //_middleView.frame=CGRectMake(0, 50,CMScreenW , 200);
-    _middleView.productTitle.text=[self.ProuctListArr objectForKey:@"title"];
-    _middleView.productId.text=[NSString stringWithFormat:@"代码%@",[self.ProuctListArr objectForKey:@"pid"]] ;
+    _middleView.productTitle.text=[self.ProuctListDict objectForKey:@"title"];
+    _middleView.productId.text=[NSString stringWithFormat:@"代码%@",[self.ProuctListDict objectForKey:@"pid"]] ;
     
     
     [self productNum:self.countNum];
@@ -222,7 +222,7 @@
         return;
     }
     static  NSString *pid;
-    pid=[self.ProuctListArr objectForKey:@"pid"];
+    pid=[self.ProuctListDict objectForKey:@"pid"];
     if ([CMRequestManager islogin]) {
         NSString *url=[NSString stringWithFormat:@"%@/handler/AppService_ProductAction.ashx?Action=1",OnLineCode];
         NSDictionary *dict=@{@"PID":pid,@"BidingCopies":_middleView.ButtonTextView.textField.text,@"HYID":self.userID,@"Tel":_bottom.shouJiNum.text};
@@ -235,7 +235,7 @@
                 vc.bankArr=self.NewBankArr;
                 vc.orderDict=(NSDictionary*)responseObj;
                 vc.productFenEr=self.productFenE;
-                vc.prTitle=[self.ProuctListArr objectForKey:@"title"];
+                vc.prTitle=[self.ProuctListDict objectForKey:@"title"];
               //  vc.ProuctListArr=self.ProuctListArr;
                 [self.navigationController pushViewController: vc animated:NO];
                 
@@ -638,12 +638,12 @@
   }
 #pragma mark 产品剩余份数
 -(int)productNum:(int)aCount{
-    self.CPLB=[self.ProuctListArr objectForKey:@"cplb"];
-    NSArray *shouArr=[self.ProuctListArr objectForKey:@"ShouYiLv"];
+    self.CPLB=[self.ProuctListDict objectForKey:@"cplb"];
+    NSArray *shouArr=[self.ProuctListDict objectForKey:@"ShouYiLv"];
     if ([self.CPLB intValue]==3||shouArr.count>0||shouArr!=NULL) {
-        mount=[[self.ProuctListArr objectForKey:@"zjfs"] intValue]*10-[[self.ProuctListArr objectForKey:@"jbfs"] intValue]-aCount;
+        mount=[[self.ProuctListDict objectForKey:@"zjfs"] intValue]*10-[[self.ProuctListDict objectForKey:@"jbfs"] intValue]-aCount;
     }else if ([self.CPLB intValue]==2||shouArr.count<=0||shouArr==NULL){
-        mount=[[self.ProuctListArr objectForKey:@"zjfs"] intValue]-[[self.ProuctListArr objectForKey:@"jbfs"] intValue]-aCount;
+        mount=[[self.ProuctListDict objectForKey:@"zjfs"] intValue]-[[self.ProuctListDict objectForKey:@"jbfs"] intValue]-aCount;
     }
     int mountPay=mount*self.productFenE;
     _middleView.productNum.text=[NSString stringWithFormat:@"当前剩余份额%d(%d元)",mount,mountPay];

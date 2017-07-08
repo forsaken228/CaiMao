@@ -15,6 +15,7 @@
 
 @property(nonatomic,strong) CMHeadView  *head;
 @property(strong,nonatomic)UIScrollView  *currentScrollView;
+@property(assign,nonatomic)float footHeight;
 @end
 
 @implementation CMDQLController
@@ -22,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"定期理财";
+    _footHeight=CMScreenH<568?40:50;
+  
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"资金记录" style:UIBarButtonItemStylePlain target:self action:@selector(enterIntoRecordOfTiXian)];
 
     [self.view addSubview:self.head];
@@ -57,7 +60,7 @@
         _currentScrollView.showsHorizontalScrollIndicator=NO;
         _currentScrollView.backgroundColor=ViewBackColor;
         _currentScrollView.scrollEnabled=NO;
-        _currentScrollView.frame=CGRectMake(0, 287,CMScreenW, 287);
+        _currentScrollView.frame=CGRectMake(0, 250,CMScreenW, CMScreenH-250-_footHeight);
     }
     return _currentScrollView;
 }
@@ -67,7 +70,7 @@
 
 -(CMHeadView*)head{
     if (!_head) {
-        _head=[[CMHeadView alloc]init];
+        _head=[[CMHeadView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, 250)];
         _head.LJTZLabel.text=@"0.00";
         _head.LJSYLabel.text=@"0.00";
         _head.DSTZLabel.text=[NSString stringWithFormat:@"本月投资到期:%@笔",@"0"];
@@ -75,7 +78,6 @@
         _head.BJLabel.text=[NSString stringWithFormat:@"本金:%@",@"0"];
         _head.CYLabel.text=@"0.00";
         _head.delegate=self;
-        _head.frame=CGRectMake(0, 0, CMScreenW, 287);
 
     }
     return _head;
@@ -111,7 +113,7 @@
     [self.view addSubview:bottomView];
     [self.view bringSubviewToFront:bottomView];
     [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@50);
+        make.height.mas_equalTo(_footHeight);
         make.left.right.bottom.equalTo(self.view);
         
     }];
@@ -122,7 +124,7 @@
         CMBottomXuanFu *xuanfu=[[CMBottomXuanFu alloc]init];
         xuanfu.backgroundColor=RedButtonColor;
         [xuanfu creatbuttonImage:bImageTitle[i] andTitle:bTitleArr[i]];
-        xuanfu.frame=CGRectMake(i%2*CMScreenW/2.0, 0, CMScreenW/2.0-0.5, 50);
+        xuanfu.frame=CGRectMake(i%2*CMScreenW/2.0, 0, CMScreenW/2.0-0.5, _footHeight);
         xuanfu.tag=i+20;
         [bottomView addSubview:xuanfu];
         UITapGestureRecognizer *tap=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick:)];

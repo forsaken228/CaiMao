@@ -10,7 +10,7 @@
 
 @interface CMUserTrueController : UIViewController
 
-@property(nonatomic,strong)NSArray *bankListArray;
+
 @property(nonatomic,strong)NSArray *userMessageArray;
 @property(nonatomic,strong)NSMutableDictionary *userMsg;
 

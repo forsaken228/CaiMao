@@ -20,7 +20,7 @@
         [self addSubview:image];
         [image mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.width.equalTo(@50);
-            make.top.equalTo(self.mas_top).offset(20);
+            make.top.equalTo(self.mas_top).offset(15);
             make.centerX.equalTo(self);
         }];
         UILabel  *label=[[UILabel alloc]init];
@@ -32,7 +32,7 @@
         [label mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@15);
             make.centerX.width.equalTo(self);
-            make.top.equalTo(image.mas_bottom).offset(10);
+            make.top.equalTo(image.mas_bottom);
         }];
         self.GoActionBtn=[UIButton buttonWithType:UIButtonTypeCustom];
         [self.GoActionBtn setTitleColor:UIColorFromRGB(0xf69220) forState:UIControlStateNormal];

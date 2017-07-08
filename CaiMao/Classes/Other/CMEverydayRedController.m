@@ -174,7 +174,7 @@ timer = [NSTimer scheduledTimerWithTimeInterval:0.01                            
             
             [ShareSDK share:SSDKPlatformSubTypeWechatTimeline              parameters:shareParams
              onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
-                 DLog(@"---%@--%@",userData,contentEntity);
+                 
                  switch (state) {
                      case SSDKResponseStateSuccess:
                      {
@@ -184,8 +184,14 @@ timer = [NSTimer scheduledTimerWithTimeInterval:0.01                            
                      }
                      case SSDKResponseStateFail:
                      {
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"%@",error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                         [alert show];
+                         DLog(@"---%ld",error.code);
+                         if (error.code==208) {
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:@"尚未安装微信客户端" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                             [alert show];
+                         }else{
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"%@",error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                             [alert show];
+                         }
                          break;
                      }
                      default:
@@ -211,8 +217,13 @@ timer = [NSTimer scheduledTimerWithTimeInterval:0.01                            
                      }
                      case SSDKResponseStateFail:
                      {
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"%@",error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                         [alert show];
+                         if (error.code==208) {
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:@"尚未安装微信客户端" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                             [alert show];
+                         }else{
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"分享失败" message:[NSString stringWithFormat:@"%@",error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                             [alert show];
+                         }
                          break;
                      }
                      default:

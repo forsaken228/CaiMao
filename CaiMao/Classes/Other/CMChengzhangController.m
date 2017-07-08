@@ -108,15 +108,11 @@
  
  
      
-     UIWindow *window = [UIApplication  sharedApplication].keyWindow;
      CMCustomShareView   *shareView=[[CMCustomShareView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, CMScreenH)];
+
+     [shareView showShareView];
      
-     [window addSubview:shareView];
-     
-     
-     
-  
-     
+
      [CMRequestHandle shortUrl:[NSString stringWithFormat:@"%@/FriendRegist-%@.aspx",OnLineCode,[CMUserDefaults objectForKey:@"userID"]] andSuccess:^(id responseObj) {
          for (NSDictionary *dict in responseObj) {
        

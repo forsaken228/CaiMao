@@ -8,20 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CMBankList : UIView<UITableViewDataSource,UITableViewDelegate>
+@interface CMBankList : UIView
 
-@property(nonatomic,strong)NSMutableArray *BankNameArray;
-@property(nonatomic,strong)NSMutableArray *BankLimitArray;
-@property(nonatomic,strong)NSMutableArray *BankIconArray;
-@property(nonatomic,strong)UITableView *myTableView;
-
-@property(nonatomic,assign)id delegate;
--(id)initCreateBankListArry:(NSArray*)bankArry;
 -(void)show;
-
-@end
-@protocol CMBankAlertViewDelegate <NSObject>
-
--(void)buttonClick;
 
 @end

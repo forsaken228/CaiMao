@@ -16,7 +16,7 @@
 @property(nonatomic,copy)NSString *tUserID;
 @property(nonatomic,copy)NSString *RequestBankNum;
 @property(copy,nonatomic)NSString *userPhoneNum;
-@property(nonatomic,strong)NSArray *bankListArray;
+
 
 @property(nonatomic,strong) CMReChargeView *ChargeView;
 
@@ -40,7 +40,6 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         //异步操作代码块
-       [self getBankList];
        [self renzhengSuccess];
         dispatch_async(dispatch_get_main_queue(), ^{
             //回到主线程操作代码块
@@ -213,7 +212,7 @@
 #pragma mark 限额说明
 -(void)limitContentBntClick{
     
-    CMBankList *list=[[CMBankList alloc]initCreateBankListArry:self.bankListArray];
+    CMBankList *list=[[CMBankList alloc]init];
     [list show];      
     
     
@@ -236,26 +235,7 @@
     
 }
 
--(void)getBankList{
-    
-#pragma mark 支持银行卡
-    [CMRequestHandle requestSupportBankListMsgsuccess:^(id responseObj) {
-        
-        NSArray *result=[responseObj objectForKey:@"result"];
-        
-        for (NSDictionary *dict in result) {
-            NSArray  *listArray=[dict objectForKey:@"bankName"];
-            self.bankListArray=listArray;
-            
-        }
-        
-        
-    }];
-    
-    
- 
-    
-}
+
 
 -(void)renzhengSuccess{
     

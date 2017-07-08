@@ -145,6 +145,7 @@
     }
     
 }
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 -(void)LoadDataWithPageIndex:(NSInteger)index{
     [CMRequestHandle AsDepositHoldListWithPage:index andSuccess:^(id responseObj) {
       

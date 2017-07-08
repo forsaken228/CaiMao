@@ -36,6 +36,7 @@
 //    }];
     
     [self.view addSubview: self.productWebView];
+    [self statisticalPage:[NSString stringWithFormat:@"web页+%@",self.urlStr]];
 }
 #pragma mark lazy
 -(JQIndicatorView*)IndicatorView{
@@ -75,31 +76,18 @@
 }
 - (void)sharkClick:(id)sender
 {
-    
-    
-    UIWindow *window = [UIApplication  sharedApplication].keyWindow;
+
     CMCustomShareView   *shareView=[[CMCustomShareView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, CMScreenH)];
-    
-    [window addSubview:shareView];
-    
-    
+    [shareView showShareView];
     [CMRequestHandle shortUrl:self.urlStr andSuccess:^(id responseObj) {
         for (NSDictionary *dict in responseObj) {
-            
             shareView.contentUrl=[dict objectForKey:@"url_short"];
-            
             shareView.titleConten = self.title;
-            
             shareView.contentStr =[NSString stringWithFormat:@"%@ %@",self.title ,shareView.contentUrl];
             shareView.ShareImageName=@[[UIImage imageNamed:@"cmshare"]];
-            
         }
-        
-        
+
     }];
-    
-    
-    
 }
 
 
@@ -109,7 +97,7 @@
     
     
     if ([self.productWebView canGoBack]) {
-        
+    
         if ([self.nextUrl containsString:@"Questionnaire"]) {
             [UIApplication sharedApplication].networkActivityIndicatorVisible=NO;
             [self.navigationController popViewControllerAnimated:YES];
@@ -212,7 +200,9 @@
     NSURL *URL = request.URL.absoluteURL;
     NSString *scheme = [URL path];
     self.nextUrl=scheme;
-    DLog(@"+++%@",request.URL.absoluteString);
+//DLog(@"+++%@",request.URL.absoluteString);
+    
+    
 
     if ([scheme isEqualToString:@"/login.aspx"]) {
         if (![CMRequestManager islogin]) {
@@ -231,7 +221,7 @@
     
     if(navigationType==UIWebViewNavigationTypeLinkClicked){
         [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.getElementsByTagName('header')[0].hidden=true"];
-        DLog(@"UIWebViewNavigationTypeLinkClicked");
+       // DLog(@"UIWebViewNavigationTypeLinkClicked");
         if([scheme isEqualToString:@"/mi/index.aspx"]){
             CMIntroduceController *login=[[CMIntroduceController alloc]init];
             [self.navigationController pushViewController:login animated:NO];
@@ -264,7 +254,7 @@
         return NO;
     }
     
-    
+
     
     
     return YES;

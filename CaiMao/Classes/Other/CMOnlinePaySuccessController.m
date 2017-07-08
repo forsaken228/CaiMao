@@ -76,21 +76,21 @@ self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:
         { //产品支付成功
             
             [self creatDetailViewWithTitle:@"支付成功" andTitleImagehide:NO bottomImageViewHide:NO DetailLabelHide:NO];
-            [self statisticalPage:[NSString stringWithFormat:@"%@+%@",self.prTitle,self.title]];
+            [self statisticalPage:[NSString stringWithFormat:@"产品购买(%@)+%@",self.title,self.prTitle]];
         }
             break;
         case isChongZhiPaySuccess:
         {//充值成功
         
             [self creatDetailViewWithTitle:@"充值成功" andTitleImagehide:YES bottomImageViewHide:NO DetailLabelHide:NO];
-            
+            [self statisticalPage:@"产品购买(充值成功)"];
         }
             break;
         case isSuiXinCunSuccess:
         {//充值成功
             
             [self creatDetailViewWithTitle:@"支付成功" andTitleImagehide:NO bottomImageViewHide:YES DetailLabelHide:YES];
-            [self statisticalPage:[NSString stringWithFormat:@"%@+%@",self.prTitle,self.title]];
+            [self statisticalPage:[NSString stringWithFormat:@"产品购买(%@)+%@",self.title,self.prTitle]];
         }
             break;
             
@@ -361,10 +361,9 @@ self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:
 {
     
     
-    UIWindow *window = [UIApplication  sharedApplication].keyWindow;
     CMCustomShareView   *shareView=[[CMCustomShareView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, CMScreenH)];
     
-    [window addSubview:shareView];
+  [shareView showShareView];
     
     
    

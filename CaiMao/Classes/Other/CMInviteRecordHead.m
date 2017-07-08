@@ -204,10 +204,14 @@
     sender.selected=YES;
     [sender setTitleColor:RedButtonColor forState:UIControlStateSelected];
     self.selectButton=sender;
+    
+   
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.5];
-    self.redView.center=CGPointMake(sender.center.x, self.redView.center.y);
-    [UIView commitAnimations];
+
+       self.redView.center=CGPointMake(sender.center.x, self.redView.center.y);
+   
+   [UIView commitAnimations];
     if ([self.delegate respondsToSelector:@selector(inviteFriendListWithIndex:)]) {
         [self.delegate inviteFriendListWithIndex:sender.tag];
     }

@@ -192,6 +192,7 @@
     
     if (![self checkNetWork]) {
         [self.RechargeTableView.mj_header endRefreshing];
+        [self hiddenProgressHUD];
         return;
     }
     NSString *url=[NSString stringWithFormat:@"%@/handler/AppInterfaceTX.ashx?Action=%d&CurrentPageIndex=%d&HYID=%@",OnLineCode,5,self.page++,[CMUserDefaults objectForKey:@"userID"]];

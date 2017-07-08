@@ -61,6 +61,7 @@
 - (void)loadYueXiYingData
 {
     if (![self checkNetWork]) {
+          [self hiddenProgressHUD];
         [self.yuexiyingTableView.mj_header endRefreshing];
         
     }
@@ -185,7 +186,7 @@
 {
     UIButton *btn = (UIButton *)sender;
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=[yinArr objectAtIndex:btn.tag];
+    vc.ProuctListDict=[yinArr objectAtIndex:btn.tag];
     vc.countNum=1;
     [self.navigationController pushViewController:vc animated:YES];
    

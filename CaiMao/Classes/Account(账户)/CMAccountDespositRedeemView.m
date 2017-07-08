@@ -146,7 +146,7 @@
     }
     
 }
-
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 -(void)LoadDataWithPageIndex:(NSInteger)index{
     [CMRequestHandle AsDepositRedeemListWithPage:index andSuccess:^(id responseObj) {
         

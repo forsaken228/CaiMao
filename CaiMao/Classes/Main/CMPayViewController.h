@@ -12,7 +12,7 @@
 #import "CMAlertRegitView.h"
 @interface CMPayViewController : UIViewController<UITextFieldDelegate>
 
-@property(nonatomic,strong)NSDictionary *ProuctListArr;
+@property(nonatomic,strong)NSDictionary *ProuctListDict;
 @property(nonatomic,copy)NSString *phoneNum;
 @property(nonatomic,copy)NSString *yuer;
 

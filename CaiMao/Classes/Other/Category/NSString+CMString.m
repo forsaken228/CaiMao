@@ -51,7 +51,7 @@
     NSMutableAttributedString *qixianStr = [[NSMutableAttributedString alloc] initWithString:FromLabel.text];
     
     NSRange qiToRang = [FromLabel.text rangeOfString:endStr];
-    [qixianStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:17.0] range:NSMakeRange(0, qiToRang.location)];
+    [qixianStr addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:17.0] range:NSMakeRange(0, qiToRang.location)];
     
     FromLabel.attributedText = qixianStr;
     

@@ -47,43 +47,63 @@
 }
 
 + (instancetype)gl_dictionaryWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt {
-    id safeObjects[cnt];
-    id safeKeys[cnt];
-    NSUInteger j = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        id key = keys[i];
-        id obj = objects[i];
-        if (!key) {
-            continue;
-        }
-        if (!obj) {
-            obj = [NSNull null];
-        }
-        safeKeys[j] = key;
-        safeObjects[j] = obj;
-        j++;
+    
+    
+    id instance = nil;
+    
+    @try {
+        instance = [self gl_dictionaryWithObjects:objects forKeys:keys count:cnt];
     }
-    return [self gl_dictionaryWithObjects:safeObjects forKeys:safeKeys count:j];
+    @catch (NSException *exception) {
+        
+        //处理错误的数据，然后重新初始化一个字典
+        NSUInteger index = 0;
+        id  _Nonnull __unsafe_unretained newObjects[cnt];
+        id  _Nonnull __unsafe_unretained newkeys[cnt];
+        
+        for (int i = 0; i < cnt; i++) {
+            if (objects[i] && keys[i]) {
+                newObjects[index] = objects[i];
+                newkeys[index] = keys[i];
+                index++;
+            }
+        }
+        instance = [self gl_dictionaryWithObjects:objects forKeys:keys count:cnt];
+    }
+    @finally {
+        return instance;
+    }
+
+
+   
 }
 
 - (instancetype)gl_initWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt {
-    id safeObjects[cnt];
-    id safeKeys[cnt];
-    NSUInteger j = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        id key = keys[i];
-        id obj = objects[i];
-        if (!key) {
-            continue;
-        }
-        if (!obj) {
-            obj = [NSNull null];
-        }
-        safeKeys[j] = key;
-        safeObjects[j] = obj;
-        j++;
+    id instance = nil;
+    
+    @try {
+        instance = [self gl_initWithObjects:objects forKeys:keys count:cnt];
     }
-    return [self gl_initWithObjects:safeObjects forKeys:safeKeys count:j];
+    @catch (NSException *exception) {
+        
+        //处理错误的数据，然后重新初始化一个字典
+        NSUInteger index = 0;
+        id  _Nonnull __unsafe_unretained newObjects[cnt];
+        id  _Nonnull __unsafe_unretained newkeys[cnt];
+        
+        for (int i = 0; i < cnt; i++) {
+            if (objects[i] && keys[i]) {
+                newObjects[index] = objects[i];
+                newkeys[index] = keys[i];
+                index++;
+            }
+        }
+        instance = [self gl_initWithObjects:objects forKeys:keys count:cnt];
+    }
+    @finally {
+        return instance;
+    }
+
 }
 
 @end

@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface CMAppDelegate : UIResponder <UIAlertViewDelegate,UIApplicationDelegate>
-{
-    CMTabBarController *tab;
-
-}
+//{
+//    CMTabBarController *tab;
+//
+//}
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) NSDictionary *userDict;
 @property (assign, nonatomic) BOOL isAppIconLaunching;
-
+@property (strong, nonatomic) CMTabBarController *tab;
 @end

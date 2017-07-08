@@ -22,8 +22,7 @@ CMSingletonM(CMRequestManager)
     
   //  NSString *urlStr=@"http://m.58cm.com/Handler/app_interface.ashx?action=RenZhengInfo";
      NSString *urlStr=[NSString stringWithFormat:@"%@/Handler/app_interface.ashx?action=RenZhengInfo",OnLineCode];
-    [CMCookie setCoookieForHost:urlStr];
-    [CMHttpTool getAndCookiesWithURL:urlStr params:nil success:^(id responseObj) {
+    [CMHttpTool getWithURL:urlStr params:nil success:^(id responseObj) {
         
        // DLog(@"RenZhengMsgsuccess数据---%@",responseObj);
             
@@ -84,7 +83,7 @@ CMSingletonM(CMRequestManager)
 -(void)requestBankListMsgsuccess:(SuccessBlock)success andFailure:(FailBlock)Failure{
    // NSString *url=@"http://m.58cm.com/handler/app_interface.ashx?action=bankList";
     NSString *url=[NSString stringWithFormat:@"%@/handler/app_interface.ashx?action=bankList",OnLineCode];
-    [CMHttpTool getAndCookiesWithURL:url params:nil success:^(id responseObj) {
+    [CMHttpTool getWithURL:url params:nil success:^(id responseObj) {
         
         
         

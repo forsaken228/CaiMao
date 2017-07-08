@@ -37,7 +37,7 @@
      
       
       //  [CMNSNotice addObserver:self selector:@selector(refreshAccountTable:) name:@"MesToAccount" object:nil];
-        [CMNSNotice addObserver:self selector:@selector(renzhengSuccess) name:@"renzhengSuccess" object:nil];
+       [CMNSNotice addObserver:self selector:@selector(renzhengSuccess) name:@"renzhengSuccess" object:nil];
        
     }
     return self;
@@ -57,6 +57,7 @@
 -(void)rechargeSuccess{
     
  //  [self.accountTableView.mj_header beginRefreshing];
+
    [self loadData];
 }
 -(void)renzhengSuccess{
@@ -354,6 +355,7 @@
 {
   
     if (![self checkNetWork]) {
+        [self hiddenProgressHUD];
          [self.accountTableView.mj_header endRefreshing];
     }
    [CMRequestHandle GetAccountMsgWithHYID:[CMUserDefaults objectForKey:@"userID"] andSuccess:^(id responseObj) {

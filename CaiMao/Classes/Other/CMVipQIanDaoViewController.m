@@ -141,7 +141,7 @@
 -(void)getVIPLevel{
     [CMRequestHandle getVipLevelandSuccess:^(id responseObj) {
       
-        DLog(@"+++++++%@",responseObj);
+    //    DLog(@"+++++++%@",responseObj);
         if ([[responseObj objectForKey:@"Status"]intValue]==200) {
             NSDictionary  *dict=[responseObj objectForKey:@"t"];
             switch ([[dict objectForKey:@"viplevl"]intValue]) {
@@ -206,7 +206,7 @@
 }
 
 -(void)circleAnimation:(NSDictionary*)dict{
-    DLog(@"++%@",dict);
+   // DLog(@"++%@",dict);
     
     int  val=[[dict objectForKey:@"vipval"]intValue];
     if (val <=500) {

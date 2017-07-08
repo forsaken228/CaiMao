@@ -180,7 +180,7 @@
             
             if ([[responseObj objectForKey:@"Status"]intValue]==200) {
                 CMPayViewController *vc=[[CMPayViewController alloc]init];
-                vc.ProuctListArr=[responseObj objectForKey:@"t"];
+                vc.ProuctListDict=[responseObj objectForKey:@"t"];
                 vc.countNum=1;
      [_receiveController.navigationController pushViewController:vc animated:YES];
                 
@@ -266,7 +266,7 @@
         }
         
     } andFailure:^(id error) {
-        
+        self.receiveDataSuccess();
         [self.myTableView.mj_header endRefreshing];
         [self.myTableView.mj_footer endRefreshing];
     }];

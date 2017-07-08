@@ -48,7 +48,7 @@ PODS:
     - MOBFoundation
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
+  - AFNetworking (~> 3.1.0)
   - AMapLocation
   - FMDB (~> 2.6.2)
   - hpple (~> 0.2.0)
@@ -92,6 +92,6 @@ SPEC CHECKSUMS:
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   ShareSDK3: 9f536aa14c3b4c4a121259030af96f43d70d7079
 
-PODFILE CHECKSUM: 6c209e0ca46db3bfe9b8e71cad5e874ced72faa4
+PODFILE CHECKSUM: b4928471a9c77f7239deddf6e538c222136f58e9
 
 COCOAPODS: 1.2.1.rc.1

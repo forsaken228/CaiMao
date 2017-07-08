@@ -126,6 +126,7 @@
 #pragma mark 加载数据
 - (void)updateData {
     if (![self checkNetWork]) {
+        [self hiddenProgressHUD];
         [self.RechargeTableView.mj_header endRefreshing];
         return;
     }

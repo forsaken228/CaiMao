@@ -265,10 +265,8 @@
 {
     
     
-    UIWindow *window = [UIApplication  sharedApplication].keyWindow;
     CMCustomShareView   *shareView=[[CMCustomShareView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, CMScreenH)];
-    
-    [window addSubview:shareView];
+     [shareView showShareView];
     
    
     [CMRequestHandle shortUrl:[NSString stringWithFormat:@"%@/sxincun/index.aspx",OnLineCode] andSuccess:^(id responseObj) {

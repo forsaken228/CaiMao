@@ -96,7 +96,24 @@
         [self loadData];
     }];
     
-   
+//  
+//    
+//    for(NSString*familyName in [UIFont familyNames] )
+//        
+//    {
+//        
+//        DLog(@"Family: %s \n", [familyName UTF8String]);
+//        
+//        NSArray*fontNames = [UIFont fontNamesForFamilyName:familyName];
+//        
+//        for(NSString*fontName in fontNames )
+//            
+//        {
+//            
+//            DLog(@"\tFont: %s \n", [fontName UTF8String] );
+//            
+//        }
+//    }
 
 }
 
@@ -648,7 +665,7 @@
 }
 -(void)DingQiBaoEnterPayControllerWithPageIndex:(NSInteger)pageIndex{
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=[dingArr objectAtIndex:pageIndex];
+    vc.ProuctListDict=[dingArr objectAtIndex:pageIndex];
     vc.countNum=1;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -84,8 +84,6 @@
 		042B06E01E84B77A0055B422 /* AsDespoitImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06DE1E84B77A0055B422 /* AsDespoitImage@3x.png */; };
 		042B06E31E84C4EB0055B422 /* 随心存a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06E11E84C4EB0055B422 /* 随心存a@2x.png */; };
 		042B06E41E84C4EB0055B422 /* 随心存a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06E21E84C4EB0055B422 /* 随心存a@3x.png */; };
-		042B06E71E84C5880055B422 /* CustomMadeImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06E51E84C5880055B422 /* CustomMadeImage@2x.png */; };
-		042B06E81E84C5880055B422 /* CustomMadeImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06E61E84C5880055B422 /* CustomMadeImage@3x.png */; };
 		042B06EB1E84C5DC0055B422 /* 定期理财@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06E91E84C5DC0055B422 /* 定期理财@2x.png */; };
 		042B06EC1E84C5DC0055B422 /* 定期理财@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042B06EA1E84C5DC0055B422 /* 定期理财@3x.png */; };
 		042B06F11E84C7470055B422 /* CMAccountDespoistController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B06F01E84C7470055B422 /* CMAccountDespoistController.m */; };
@@ -441,8 +439,6 @@
 		046CCDED1E482C5900A74EB3 /* NoDataImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046CCDEA1E482C5900A74EB3 /* NoDataImage@2x.png */; };
 		046DC1631DE53F8C0002C7AA /* YHBg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DC1611DE53F8C0002C7AA /* YHBg@2x.png */; };
 		046DC1651DE53F8C0002C7AA /* YHBg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DC1621DE53F8C0002C7AA /* YHBg@3x.png */; };
-		046DC16F1DE56D050002C7AA /* huoQiImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DC16D1DE56D050002C7AA /* huoQiImage@2x.png */; };
-		046DC1711DE56D050002C7AA /* huoQiImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046DC16E1DE56D050002C7AA /* huoQiImage@3x.png */; };
 		046DC1791DE5770C0002C7AA /* CMJuHaiPercentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 046DC1781DE5770C0002C7AA /* CMJuHaiPercentView.m */; };
 		046F50451DCD6F7A004B738E /* CMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F50441DCD6F7A004B738E /* CMNoticeViewController.m */; };
 		046F50491DCD7768004B738E /* CMNoticeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 046F50481DCD7768004B738E /* CMNoticeCell.m */; };
@@ -581,6 +577,7 @@
 		0486D8371DBF3A1B00342B4F /* CMCheackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486D8361DBF3A1B00342B4F /* CMCheackController.m */; };
 		0486D83B1DBF3BCA00342B4F /* CMChagePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486D83A1DBF3BCA00342B4F /* CMChagePhoto.m */; };
 		0486D83E1DBF4F3E00342B4F /* SHFail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0486D83D1DBF4F3E00342B4F /* SHFail@3x.png */; };
+		0488A7991F0CC5DD00A6B856 /* CMBankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0488A7981F0CC5DD00A6B856 /* CMBankModel.m */; };
 		0488AF0D1D73D7C300796818 /* zfcg_chengong_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0B1D73D7C300796818 /* zfcg_chengong_icon@2x.png */; };
 		0488AF0E1D73D7C300796818 /* zfcg_chengong_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0C1D73D7C300796818 /* zfcg_chengong_icon@3x.png */; };
 		0488AF151D73DC5F00796818 /* zfcg_ljgd_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0488AF0F1D73DC5F00796818 /* zfcg_ljgd_icon@2x.png */; };
@@ -665,6 +662,7 @@
 		048FFFAB1DC1FC6B005CF5DE /* details_banner_ypt@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048FFFA81DC1FC6B005CF5DE /* details_banner_ypt@3x.png */; };
 		0491B3FA1D5D48C90060B810 /* CMInviteFreindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491B3F91D5D48C90060B810 /* CMInviteFreindViewController.m */; };
 		049252681EE14C6E00D07B54 /* UIViewController+Statistical.m in Sources */ = {isa = PBXBuildFile; fileRef = 049252671EE14C6E00D07B54 /* UIViewController+Statistical.m */; };
+		049480E51F0B212300CB1D04 /* hydz.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 049480E41F0B212300CB1D04 /* hydz.ttf */; };
 		0495B4181D7526E1009AA46D /* zfcg_viphy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0495B4161D7526E1009AA46D /* zfcg_viphy@2x.png */; };
 		0495B4191D7526E1009AA46D /* zfcg_viphy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0495B4171D7526E1009AA46D /* zfcg_viphy@3x.png */; };
 		0495B41C1D7535C2009AA46D /* zfcg_dqbjd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0495B41A1D7535C2009AA46D /* zfcg_dqbjd@2x.png */; };
@@ -956,12 +954,10 @@
 		042A0D071E55981B00277CBE /* CMLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMLoginView.m; sourceTree = "<group>"; };
 		042B06D91E84B71D0055B422 /* CMAsDespositDetailHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMAsDespositDetailHeadView.h; sourceTree = "<group>"; };
 		042B06DA1E84B71D0055B422 /* CMAsDespositDetailHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMAsDespositDetailHeadView.m; sourceTree = "<group>"; };
-		042B06DD1E84B77A0055B422 /* AsDespoitImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AsDespoitImage@2x.png"; path = "../AsDespoitImage@2x.png"; sourceTree = "<group>"; };
-		042B06DE1E84B77A0055B422 /* AsDespoitImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AsDespoitImage@3x.png"; path = "../AsDespoitImage@3x.png"; sourceTree = "<group>"; };
+		042B06DD1E84B77A0055B422 /* AsDespoitImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AsDespoitImage@2x.png"; path = "Classes/AsDespoitImage@2x.png"; sourceTree = "<group>"; };
+		042B06DE1E84B77A0055B422 /* AsDespoitImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AsDespoitImage@3x.png"; path = "Classes/AsDespoitImage@3x.png"; sourceTree = "<group>"; };
 		042B06E11E84C4EB0055B422 /* 随心存a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随心存a@2x.png"; sourceTree = "<group>"; };
 		042B06E21E84C4EB0055B422 /* 随心存a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "随心存a@3x.png"; sourceTree = "<group>"; };
-		042B06E51E84C5880055B422 /* CustomMadeImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMadeImage@2x.png"; sourceTree = "<group>"; };
-		042B06E61E84C5880055B422 /* CustomMadeImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CustomMadeImage@3x.png"; sourceTree = "<group>"; };
 		042B06E91E84C5DC0055B422 /* 定期理财@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定期理财@2x.png"; sourceTree = "<group>"; };
 		042B06EA1E84C5DC0055B422 /* 定期理财@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "定期理财@3x.png"; sourceTree = "<group>"; };
 		042B06EF1E84C7470055B422 /* CMAccountDespoistController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMAccountDespoistController.h; sourceTree = "<group>"; };
@@ -1461,8 +1457,6 @@
 		046D09DB1DF68CC5009624E5 /* CaiMao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CaiMao.entitlements; path = CaiMao/CaiMao.entitlements; sourceTree = "<group>"; };
 		046DC1611DE53F8C0002C7AA /* YHBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YHBg@2x.png"; sourceTree = "<group>"; };
 		046DC1621DE53F8C0002C7AA /* YHBg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YHBg@3x.png"; sourceTree = "<group>"; };
-		046DC16D1DE56D050002C7AA /* huoQiImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "huoQiImage@2x.png"; sourceTree = "<group>"; };
-		046DC16E1DE56D050002C7AA /* huoQiImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "huoQiImage@3x.png"; sourceTree = "<group>"; };
 		046DC1771DE5770C0002C7AA /* CMJuHaiPercentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMJuHaiPercentView.h; sourceTree = "<group>"; };
 		046DC1781DE5770C0002C7AA /* CMJuHaiPercentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMJuHaiPercentView.m; sourceTree = "<group>"; };
 		046F50431DCD6F7A004B738E /* CMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMNoticeViewController.h; sourceTree = "<group>"; };
@@ -1659,6 +1653,8 @@
 		0486D8391DBF3BCA00342B4F /* CMChagePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMChagePhoto.h; sourceTree = "<group>"; };
 		0486D83A1DBF3BCA00342B4F /* CMChagePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMChagePhoto.m; sourceTree = "<group>"; };
 		0486D83D1DBF4F3E00342B4F /* SHFail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHFail@3x.png"; sourceTree = "<group>"; };
+		0488A7971F0CC5DD00A6B856 /* CMBankModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMBankModel.h; sourceTree = "<group>"; };
+		0488A7981F0CC5DD00A6B856 /* CMBankModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMBankModel.m; sourceTree = "<group>"; };
 		0488AF0B1D73D7C300796818 /* zfcg_chengong_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_chengong_icon@2x.png"; sourceTree = "<group>"; };
 		0488AF0C1D73D7C300796818 /* zfcg_chengong_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_chengong_icon@3x.png"; sourceTree = "<group>"; };
 		0488AF0F1D73DC5F00796818 /* zfcg_ljgd_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_ljgd_icon@2x.png"; sourceTree = "<group>"; };
@@ -1760,6 +1756,7 @@
 		0491B3F91D5D48C90060B810 /* CMInviteFreindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMInviteFreindViewController.m; sourceTree = "<group>"; };
 		049252661EE14C6E00D07B54 /* UIViewController+Statistical.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Statistical.h"; sourceTree = "<group>"; };
 		049252671EE14C6E00D07B54 /* UIViewController+Statistical.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Statistical.m"; sourceTree = "<group>"; };
+		049480E41F0B212300CB1D04 /* hydz.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hydz.ttf; sourceTree = "<group>"; };
 		0495B4161D7526E1009AA46D /* zfcg_viphy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_viphy@2x.png"; sourceTree = "<group>"; };
 		0495B4171D7526E1009AA46D /* zfcg_viphy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_viphy@3x.png"; sourceTree = "<group>"; };
 		0495B41A1D7535C2009AA46D /* zfcg_dqbjd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zfcg_dqbjd@2x.png"; sourceTree = "<group>"; };
@@ -2304,6 +2301,7 @@
 		0432F4821D1105B400F8A74A /* 实名认证 */ = {
 			isa = PBXGroup;
 			children = (
+				0488A7961F0CC51B00A6B856 /* otherView */,
 				0432F4851D11060300F8A74A /* Controller */,
 				0432F4831D1105DE00F8A74A /* View */,
 			);
@@ -2318,12 +2316,8 @@
 				0432F4871D11066500F8A74A /* CMUserSureViewCell.m */,
 				0432F4901D1108F600F8A74A /* CMUserMsgCell.h */,
 				0432F4911D1108F600F8A74A /* CMUserMsgCell.m */,
-				045880FD1D127FBE006C21BC /* CMBankList.h */,
-				045880FE1D127FBE006C21BC /* CMBankList.m */,
 				04175A7D1D78194400DD69B1 /* CMAlertView.h */,
 				04175A7E1D78194400DD69B1 /* CMAlertView.m */,
-				045881051D128EC7006C21BC /* CMBankListCell.h */,
-				045881061D128EC7006C21BC /* CMBankListCell.m */,
 				0431C31A1D1B8A8000BE3C20 /* ChangeBank.h */,
 				0431C31B1D1B8A8000BE3C20 /* ChangeBank.m */,
 				0427E9051D407391002FE049 /* Tool */,
@@ -2663,8 +2657,7 @@
 		045D428C1D9D08CB00EB9B5C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				042B06DD1E84B77A0055B422 /* AsDespoitImage@2x.png */,
-				042B06DE1E84B77A0055B422 /* AsDespoitImage@3x.png */,
+				049480E41F0B212300CB1D04 /* hydz.ttf */,
 				50A268DB1A3A8C6500545B4A /* 图片资源 */,
 			);
 			name = Resource;
@@ -3413,6 +3406,19 @@
 			name = "银行卡认证";
 			sourceTree = "<group>";
 		};
+		0488A7961F0CC51B00A6B856 /* otherView */ = {
+			isa = PBXGroup;
+			children = (
+				045880FD1D127FBE006C21BC /* CMBankList.h */,
+				045880FE1D127FBE006C21BC /* CMBankList.m */,
+				045881051D128EC7006C21BC /* CMBankListCell.h */,
+				045881061D128EC7006C21BC /* CMBankListCell.m */,
+				0488A7971F0CC5DD00A6B856 /* CMBankModel.h */,
+				0488A7981F0CC5DD00A6B856 /* CMBankModel.m */,
+			);
+			name = otherView;
+			sourceTree = "<group>";
+		};
 		0488AF0A1D73D48D00796818 /* 支付成功资源图片 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3986,6 +3992,8 @@
 		50A268DB1A3A8C6500545B4A /* 图片资源 */ = {
 			isa = PBXGroup;
 			children = (
+				042B06DD1E84B77A0055B422 /* AsDespoitImage@2x.png */,
+				042B06DE1E84B77A0055B422 /* AsDespoitImage@3x.png */,
 				0469830E1E10C92F00EFD954 /* QQEmailImage@2x.png */,
 				0469830F1E10C92F00EFD954 /* QQEmailImage@3x.png */,
 				0477944E1E07830E00B83781 /* LanuchAdImage@3x.png */,
@@ -4514,8 +4522,6 @@
 		50D0AE301C3FCADF00400CFB /* 我的账户图片 */ = {
 			isa = PBXGroup;
 			children = (
-				042B06E51E84C5880055B422 /* CustomMadeImage@2x.png */,
-				042B06E61E84C5880055B422 /* CustomMadeImage@3x.png */,
 				046AE9281DEFFF730024EDB5 /* cheackAll@2x.png */,
 				046AE9291DEFFF730024EDB5 /* cheackAll@3x.png */,
 				0457A9F91DED511600A24B62 /* MymessageNotData@2x.png */,
@@ -4558,8 +4564,6 @@
 				0457A98E1DED31AA00A24B62 /* 充值@3x.png */,
 				0457A98F1DED31AA00A24B62 /* 提现@2x.png */,
 				0457A9901DED31AA00A24B62 /* 提现@3x.png */,
-				046DC16D1DE56D050002C7AA /* huoQiImage@2x.png */,
-				046DC16E1DE56D050002C7AA /* huoQiImage@3x.png */,
 				045EF2A31D6E8287001E804D /* headIcon@2x.png */,
 				045EF2A41D6E8287001E804D /* headIcon@3x.png */,
 				0457AA051DED53A000A24B62 /* msgHead@2x.png */,
@@ -4883,7 +4887,6 @@
 				0457A9651DED2ED000A24B62 /* 喵客18节@2x.png in Resources */,
 				047958961D62C231005BAD87 /* jhl_yuanquan_fill@2x.png in Resources */,
 				04175A6D1D780CDF00DD69B1 /* cfbht_wenhao_icon@2x.png in Resources */,
-				042B06E81E84C5880055B422 /* CustomMadeImage@3x.png in Resources */,
 				04550D031DF7E3AB00B9F181 /* sy_rqcp_Queen@2x.png in Resources */,
 				044E853D1DC2F9E100526F5A /* details_banner_dqb@2x.png in Resources */,
 				50BBB0361C813ADC00BA65E7 /* dropdown_03@2x.png in Resources */,
@@ -4909,7 +4912,6 @@
 				04175A991D78300E00DD69B1 /* cfbht_tankuangtu@3x..png in Resources */,
 				046CCDEB1E482C5900A74EB3 /* NoDataImage@3x.png in Resources */,
 				046AE92C1DEFFF730024EDB5 /* cheackAll@3x.png in Resources */,
-				046DC1711DE56D050002C7AA /* huoQiImage@3x.png in Resources */,
 				0488AF1F1D73DC7700796818 /* zfcg_ckzh_icon@2x.png in Resources */,
 				0485E2591E88A979000BE46C /* rishIcon@3x.png in Resources */,
 				046BE1E61DC9992A00B037DB /* 网站声明@2x.png in Resources */,
@@ -4993,7 +4995,6 @@
 				0457A9C71DED341000A24B62 /* 更多@2x.png in Resources */,
 				047794521E07830E00B83781 /* LanuchAdImage@2x.png in Resources */,
 				0488AF201D73DC7700796818 /* zfcg_ckzh_icon@3x.png in Resources */,
-				046DC16F1DE56D050002C7AA /* huoQiImage@2x.png in Resources */,
 				042B06EB1E84C5DC0055B422 /* 定期理财@2x.png in Resources */,
 				048480571DAB96D100DAD567 /* QQ好友@2x.png in Resources */,
 				048480591DAB96D100DAD567 /* QQ空间.png in Resources */,
@@ -5008,7 +5009,6 @@
 				048480491DAB96D100DAD567 /* 微信好友.png in Resources */,
 				0457A9B71DED341000A24B62 /* 安全认证@2x.png in Resources */,
 				0450CBA61E04C69C00F8A3AA /* cPesrone@2x.png in Resources */,
-				042B06E71E84C5880055B422 /* CustomMadeImage@2x.png in Resources */,
 				045EF2A51D6E8287001E804D /* headIcon@2x.png in Resources */,
 				0457A9E11DED341000A24B62 /* 我的优惠劵Image@3x.png in Resources */,
 				0456DCFF1D82B7DD0041E9B4 /* ttfx_anniu_haoyou@2x.png in Resources */,
@@ -5177,6 +5177,7 @@
 				0457A9EB1DED341000A24B62 /* 邀请好友@2x.png in Resources */,
 				0457A9531DED2ED000A24B62 /* 财富宝@3x.png in Resources */,
 				046BE1F01DC99B0A00B037DB /* 帮助@2x.png in Resources */,
+				049480E51F0B212300CB1D04 /* hydz.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5327,6 +5328,7 @@
 				50D4E4471C3CAA4000D597A7 /* CMXinKeList.m in Sources */,
 				50BBB02F1C81376400BA65E7 /* CMRefreshHeader.m in Sources */,
 				046BE21C1DC9BAB700B037DB /* CMHelpViewCell.m in Sources */,
+				0488A7991F0CC5DD00A6B856 /* CMBankModel.m in Sources */,
 				04143B851F00FFB4005B810E /* NSDictionary+NilSafe.m in Sources */,
 				046725D31DD5629C00A77097 /* CMZhuanChuConfirmHeadView.m in Sources */,
 				042B06F41E84C9200055B422 /* CMAccountDespositTopView.m in Sources */,

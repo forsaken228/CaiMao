@@ -11,7 +11,7 @@
 @interface CMZhuangRuCFBController ()
 
 
-@property(nonatomic,strong)NSArray  *bankListArray;
+
 @property(nonatomic,strong)NSArray  *RenZhengbankArray;
 @property(nonatomic,strong)NSDictionary  *bankDataDict;
 @property(nonatomic,strong)NSDictionary  *CFbDataDict;
@@ -67,7 +67,7 @@
 -(void)loaddata{
     [self showDefaultProgressHUD];
     self.MyTableView.hidden=YES;
-    [self getBankList];
+
     [self getRenZhengBankList];
     [self getCfbMessage];
 }
@@ -276,13 +276,7 @@
 }
 #pragma mark Lazy
 
--(NSArray*)bankListArray{
-    
-    if (!_bankListArray) {
-        _bankListArray=[NSArray array];
-    }
-    return _bankListArray;
-}
+
 -(NSArray*)RenZhengbankArray{
     
     if (!_RenZhengbankArray) {
@@ -615,41 +609,24 @@
 
 #pragma mark 支持银行卡列表
 -(void)BankDeatilAction{
-    DLog(@"转入方法");
+  
     
-    CMBankList *list=[[CMBankList alloc]initCreateBankListArry:self.bankListArray];
+    CMBankList *list=[[CMBankList alloc]init];
     [list show];
 
     
 }
 
 
-#pragma mark 获取银行卡限额列表
--(void)getBankList{
-    
-    [CMRequestHandle requestSupportBankListMsgsuccess:^(id responseObj) {
-       
-        
-        if ([[responseObj objectForKey:@"status"]intValue]==200) {
-        NSArray *result=[responseObj objectForKey:@"result"];
-        for (NSDictionary *dict in result) {
-            NSArray  *listArray=[dict objectForKey:@"bankName"];
-            self.bankListArray=listArray;
-            [self.MyTableView reloadData];
-        }
-        }
-        [self hiddenProgressHUD];
-        self.MyTableView.hidden=NO;
-    }];
-    
-}
+
 -(void)getRenZhengBankList{
     
     [CMRequestHandle requestBankListMsgsuccess:^(id responseObj) {
         //DLog(@"认证%@",responseObj);
         if ([[responseObj objectForKey:@"status"]intValue]==200) {
             self.RenZhengbankArray=[responseObj objectForKey:@"result"];
-    
+            [self hiddenProgressHUD];
+            self.MyTableView.hidden=NO;
             [self.MyTableView reloadData];
         }
 //        else if ([[responseObj objectForKey:@"status"]intValue]==300){

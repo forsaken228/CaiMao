@@ -7,14 +7,18 @@
 //
 
 #import "CMBankList.h"
+#import "CMBankModel.h"
+@interface CMBankList ()<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic,strong)UITableView *myTableView;
+@property(nonatomic,strong)NSArray *dataArr;
+@end
 @implementation CMBankList
--(id)initCreateBankListArry:(NSArray*)bankArry{
+-(id)init{
     self=[super init];
     if (self) {
 
-    
-        [self creatTopContent:bankArry];
-        
+        [self creatTopContent];
+        [self LoadData];
         [self viewWillLayoutSubviews];
         
     }
@@ -23,7 +27,7 @@
 
 }
 #pragma mark 顶部内容
--(void)creatTopContent:(NSArray *)arr{
+-(void)creatTopContent{
     self.frame=[UIScreen mainScreen].bounds;
     //模糊视图
     UIImageView  *bgView=[[UIImageView alloc]initWithFrame:self.frame];
@@ -85,40 +89,6 @@
         make.height.mas_equalTo(12);
     }];
     
-//    UIButton *CancleBtn=[UIButton buttonWithType:UIButtonTypeSystem];
-//    CancleBtn.frame=CGRectMake(245, 5, 30, 30);
-//    //CancleBtn.alpha=0.5;
-//    CancleBtn.layer.cornerRadius=15.0;
-//    CancleBtn.clipsToBounds=YES;
-//    //[CancleBtn setBackgroundImage:[UIImage imageNamed:@"cancleBtn"] forState:UIControlStateNormal];
-//    CancleBtn.titleLabel.font=[UIFont boldSystemFontOfSize:15.0];
-//    [CancleBtn setTitle:@"取消" forState:UIControlStateNormal];
-//    [CancleBtn setTitleColor:RedButtonColor forState:UIControlStateNormal];
-//    [CancleBtn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    [contentView addSubview:CancleBtn];
-//    
-
-    for (NSDictionary *name in arr) {
-        NSString *nameArray=[name objectForKey:@"name"];
-        
-        //self.BankNameArray=nameArray;
-        [self.BankNameArray addObject:nameArray];
-    }
-    for (NSDictionary *limit in arr) {
-        NSString *nameArray=[limit objectForKey:@"banksquota"];
-        //self.BankNameArray=nameArray;
-        [self.BankLimitArray addObject:nameArray];
-    }
-    for (NSDictionary *icon in arr) {
-        NSString *nameArray=[icon objectForKey:@"nameIcon"];
-        
-        //self.BankNameArray=nameArray;
-        [self.BankIconArray addObject:nameArray];
-    }
-    
-    
-    
    
    
     [contentView addSubview:self.myTableView];
@@ -139,28 +109,16 @@
     
     return _myTableView;
 }
--(NSMutableArray*)BankIconArray{
-    if (!_BankIconArray) {
-        _BankIconArray=[NSMutableArray arrayWithCapacity:0];
+-(NSArray*)dataArr{
+    if (!_dataArr) {
+        _dataArr=[NSArray array];
     }
-    return _BankIconArray;
-}
--(NSMutableArray*)BankNameArray{
-    if (!_BankNameArray) {
-        _BankNameArray=[NSMutableArray arrayWithCapacity:0];
-    }
-    return _BankNameArray;
-}
--(NSMutableArray*)BankLimitArray{
-    if (!_BankLimitArray) {
-        _BankLimitArray=[NSMutableArray arrayWithCapacity:0];
-    }
-    return _BankLimitArray;
+    return _dataArr;
 }
 
 #pragma mark银行列表
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.BankNameArray.count;
+    return self.dataArr.count;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
@@ -175,10 +133,10 @@ static NSString *tCell=@"cell";
         cell.selectionStyle=UITableViewCellSeparatorStyleNone;
       
     }
-    
-    cell.bankName.text=self.BankNameArray[indexPath.row];
-    cell.limit.text=self.BankLimitArray[indexPath.row];
-    [cell.BankIcon sd_setImageWithURL:self.BankIconArray[indexPath.row] placeholderImage:nil options:SDWebImageProgressiveDownload];
+    CMBankModel *model=self.dataArr[indexPath.row];
+    cell.bankName.text=model.name;
+    cell.limit.text=model.banksquota;
+    [cell.BankIcon sd_setImageWithURL:[NSURL URLWithString:model.nameIcon] placeholderImage:nil options:SDWebImageProgressiveDownload];
     return cell;
 }
 #pragma mark展示AlertView
@@ -199,9 +157,7 @@ static NSString *tCell=@"cell";
 -(void)dismissView
 {
     [self removeFromSuperview];
-//    if ([_delegate respondsToSelector:@selector(buttonClick)]) {
-//        [_delegate buttonClick];
-//    }
+
     
 }
 -(void)viewWillLayoutSubviews
@@ -213,5 +169,18 @@ static NSString *tCell=@"cell";
     if ([self.myTableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [self.myTableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
+}
+-(void)LoadData{
+    
+    [CMRequestHandle requestSupportBankListMsgsuccess:^(id responseObj) {
+        
+        NSArray *result=[responseObj objectForKey:@"result"];
+        NSDictionary *dict=result.firstObject;
+        NSArray  *listArray=[dict objectForKey:@"bankName"];
+       // DLog(@"支持银行++++%@",[CMBankModel mj_objectArrayWithKeyValuesArray:listArray]);
+            self.dataArr=[CMBankModel mj_objectArrayWithKeyValuesArray:listArray];
+            [self.myTableView reloadData];
+        
+    }];
 }
 @end

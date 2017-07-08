@@ -35,6 +35,7 @@ CMSingletonH(CMVenderConfiguration)
 //高德定位
 
 +(void)registerMap;
+
 - (void)AMapstartLocation;
 
 @end

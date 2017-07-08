@@ -81,9 +81,9 @@
         }];
         self.productHeadView.bounds=CGRectMake(0, 0, CMScreenW, 220);
         [self.myTabelView setTableHeaderView:self.productHeadView];
-        [self.productHeadView.horneLine mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@0.5);
-        }];
+//        [self.productHeadView.horneLine mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.equalTo(@0.5);
+//        }];
         if (self.isMiaosha) {//是喵杀惠
          
              
@@ -183,11 +183,21 @@
     }else{
         #pragma mark 是聚嗨利产品
         self.productHeadView.HaiPeopleNum.hidden=NO;
-        self.productHeadView.hubImage.hidden=YES;
+        self.productHeadView.horneLine.hidden=NO;
+      //  self.productHeadView.hubImage.hidden=YES;
+        self.productHeadView.ShouYiZheng.font=[UIFont boldSystemFontOfSize:65.0f];
         [self.productHeadView.ShouYiZheng mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.productHeadView.hubImage.mas_top).offset(20);
-           make.right.equalTo(self.productHeadView.topBg.mas_centerX).offset(-25);
+            make.centerY.equalTo(self.productHeadView.topBg.mas_centerY).offset(-70);
+            make.height.equalTo(@60);
         }];
+        [self.productHeadView.ShouYiZheng mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.productHeadView.topBg.mas_centerY).offset(-60);
+            make.height.equalTo(@60);
+        }];
+        [self.productHeadView.ShouYiXiao mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@30);
+        }];
+     
      self.productHeadView.juQiShilv.text = [[self.productListArr objectForKey:@"nlv"] stringByAppendingString:@"%"];
    
     // 设置各个阶段的收益率和人数 和 显示效果
@@ -537,7 +547,7 @@
     DLog(@"竞拍点击了");
     CMPayViewController *vc=[[CMPayViewController alloc]init];
     vc.countNum=count;
-    vc.ProuctListArr=self.productListArr;
+    vc.ProuctListDict=self.productListArr;
     [self.navigationController pushViewController:vc animated:YES];
     
     
@@ -725,10 +735,10 @@
 {
     
     
-  UIWindow *window = [UIApplication  sharedApplication].keyWindow;
+
     CMCustomShareView   *shareView=[[CMCustomShareView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, CMScreenH)];
 
-    [window addSubview:shareView];
+   [shareView showShareView];
     
     
    [CMRequestHandle shortUrl:[NSString stringWithFormat:@"http://m.58cm.com/tz/lcshow_%@.aspx",[self.productListArr objectForKey:@"pid"]] andSuccess:^(id responseObj) {

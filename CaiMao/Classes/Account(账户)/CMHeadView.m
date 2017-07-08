@@ -16,14 +16,13 @@
 
 @implementation CMHeadView
 
--(instancetype)init{
-    self=[super init];
+-(instancetype)initWithFrame:(CGRect)frame{
+    self=[super initWithFrame:frame];
     if (self) {
         
-        UIView *bgView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, 200)];
+        UIView *bgView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, CMScreenW, 180)];
         bgView.backgroundColor=RedButtonColor;
         [self addSubview:bgView];
-        
         [bgView addSubview:self.CYLabel];
         [self.CYLabel  mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@20);
@@ -36,7 +35,7 @@
         UILabel *label=[[UILabel alloc]init];
         label.textColor=[UIColor whiteColor];
         label.alpha=0.70;
-        label.font=[UIFont boldSystemFontOfSize:13.0];
+        label.font=[UIFont boldSystemFontOfSize:12.0];
         label.textAlignment=NSTextAlignmentCenter;
         label.text=@"持有( 元 )";
         [bgView addSubview:label];
@@ -49,17 +48,19 @@
         UILabel *OTabel=[[UILabel alloc]init];
         OTabel.textColor=[UIColor whiteColor];
         OTabel.alpha=0.70;
-        OTabel.font=[UIFont boldSystemFontOfSize:13.0];
+        OTabel.font=[UIFont boldSystemFontOfSize:12.0];
         OTabel.textAlignment=NSTextAlignmentCenter;
         OTabel.text=@"累计投资( 元 )";
         [bgView addSubview:OTabel];
+        [bgView addSubview:self.LJTZLabel];
+        
         [OTabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@100);
             make.height.equalTo(@13);
             make.left.equalTo(bgView.mas_left).offset(10);
-            make.bottom.equalTo(bgView.mas_bottom).offset(-50);
+            make.bottom.equalTo(bgView.mas_bottom).offset(-40);
         }];
-        [bgView addSubview:self.LJTZLabel];
+
         [self.LJTZLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.equalTo(@20);
             make.width.equalTo(@150);
@@ -72,7 +73,7 @@
         UILabel *TLabel=[[UILabel alloc]init];
         TLabel.textColor=[UIColor whiteColor];
         TLabel.alpha=0.70;
-        TLabel.font=[UIFont boldSystemFontOfSize:13.0];
+        TLabel.font=[UIFont boldSystemFontOfSize:12.0];
         TLabel.textAlignment=NSTextAlignmentCenter;
         TLabel.text=@"累计收益( 元 )";
         [bgView addSubview:TLabel];
@@ -93,7 +94,7 @@
         bottomView.backgroundColor=UIColorFromRGB(0xfdf9dc);
         [self addSubview:bottomView];
         [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@35);
+            make.height.equalTo(@30);
             make.width.left.equalTo(self);
             make.top.equalTo(bgView.mas_bottom);
         }];
@@ -149,7 +150,7 @@
         NSArray *TitleArr=@[@"持有",@"预定",@"结清"];
         for (int i=0; i<TitleArr.count; i++) {
             UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame=CGRectMake(i%3*CMScreenW/3.0, 245, CMScreenW/3.0, 40);
+            btn.frame=CGRectMake(i%3*CMScreenW/3.0, 180+30, CMScreenW/3.0, 40);
             self.headButton=btn;
             [btn setBackgroundColor:[UIColor whiteColor]];
             [btn setTitle:TitleArr[i] forState:UIControlStateNormal];
@@ -166,10 +167,10 @@
             
         }
 
-      self.moveView.frame=CGRectMake(0,284, CMScreenW/3.0, 2) ;
+      self.moveView.frame=CGRectMake(0,self.frame.size.height-2, CMScreenW/3.0, 2) ;
        [self addSubview:_moveView];
 
-        self.circleProgress = [[CMProgressView alloc] initWithFrame:CGRectMake(CMScreenW/2.0-f_i5real(145/2.0), 10, f_i5real(145), f_i5real(145))];
+        self.circleProgress = [[CMProgressView alloc] initWithFrame:CGRectMake(CMScreenW/2.0-f_i5real(120/2.0), 10, f_i5real(120), f_i5real(120))];
         self.circleProgress.progress = 0.0;
         [self addSubview:self.circleProgress];
         if (self.circleProgress.progress<=0) {

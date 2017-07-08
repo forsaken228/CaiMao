@@ -31,69 +31,70 @@
     }];
    
     
-    UIImageView *HubgView=[[UIImageView alloc]init];
-     HubgView.image=[UIImage imageNamed:@"cpxq_bj"];
-    self.hubImage=HubgView;
-    [topbgView addSubview:HubgView];
-    [HubgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@110);
-        make.width.equalTo(@250);
-        make.centerX.equalTo(topbgView.mas_centerX);
-        make.top.equalTo(topbgView).offset(10);
-    }];
+//    UIImageView *HubgView=[[UIImageView alloc]init];
+//     HubgView.image=[UIImage imageNamed:@"cpxq_bj"];
+//    self.hubImage=HubgView;
+//    [topbgView addSubview:HubgView];
+//    [HubgView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.equalTo(@110);
+//        make.width.equalTo(@250);
+//        make.centerX.equalTo(topbgView.mas_centerX);
+//        make.top.equalTo(topbgView).offset(10);
+//    }];
     
     
     
     UILabel *zhengShu=[[UILabel alloc]init];
     self.ShouYiZheng=zhengShu;
     zhengShu.textColor=[UIColor whiteColor];
-    zhengShu.font=[UIFont systemFontOfSize:40];
+    zhengShu.font=[UIFont boldSystemFontOfSize:75];
     zhengShu.textAlignment=NSTextAlignmentRight;
     [topbgView addSubview:zhengShu];
     [zhengShu mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@45);
-        make.width.equalTo(@50);
-        make.top.equalTo(HubgView).offset(35);
-        make.right.equalTo(topbgView.mas_centerX).offset(-10);
+        make.height.equalTo(@80);
+        make.width.equalTo(@95);
+        make.centerY.equalTo(topbgView.mas_centerY).offset(-10);
+        make.right.equalTo(topbgView.mas_centerX);
     }];
     
-   
-    UILabel *shouYi=[[UILabel alloc]init];
-    shouYi.text=YuQiShouYi;
-    shouYi.textColor=[UIColor whiteColor];
-    shouYi.font=[UIFont systemFontOfSize:12.0];
-    [topbgView addSubview:shouYi];
-    [shouYi mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@13);
-        make.width.equalTo(@90);
-        make.top.equalTo(zhengShu.mas_centerY).offset(2);
-        make.left.equalTo(zhengShu.mas_right).offset(5);
-    }];
     UILabel *xiaoShu=[[UILabel alloc]init];
     self.ShouYiXiao=xiaoShu;
     xiaoShu.textColor=[UIColor whiteColor];
-    xiaoShu.font=[UIFont systemFontOfSize:15];
+    xiaoShu.font=[UIFont boldSystemFontOfSize:20];
     [topbgView addSubview:xiaoShu];
     [xiaoShu mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.left.equalTo(shouYi);
-        make.width.equalTo(@50);
-        make.bottom.equalTo(zhengShu.mas_centerY).offset(-2);
+        make.left.equalTo(zhengShu.mas_right).offset(5);
+        make.height.mas_equalTo(40);
+        make.width.equalTo(@80);
+        make.top.equalTo(zhengShu.mas_top);
         
     }];
+    UILabel *shouYi=[[UILabel alloc]init];
+    shouYi.text=YuQiShouYi;
+    self.shouYilab=shouYi;
+    shouYi.textColor=[UIColor whiteColor];
+    shouYi.font=[UIFont boldSystemFontOfSize:14.0];
+    [topbgView addSubview:shouYi];
+    CGRect rect=[shouYi.text boundingRectWithSize:CGSizeMake(MAXFLOAT,35) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:14.0]} context:nil];
+
+    [shouYi mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(rect.size.width+2);
+        make.bottom.equalTo(zhengShu.mas_bottom);
+        make.left.height.equalTo(xiaoShu);
+    }];
+  
     
     
     
     UILabel *percent=[[UILabel alloc]init];
-    //percent.frame=CGRectMake(117 , 77, 52, 20);
     percent.textColor=[UIColor whiteColor];
     percent.textAlignment=NSTextAlignmentCenter;
-    percent.font=[UIFont systemFontOfSize:11.0];
+    percent.font=[UIFont systemFontOfSize:12.0];
     self.juQiShilv=percent;
     [self addSubview:percent];
     [percent mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@12);
-        make.bottom.equalTo(shouYi);
-        make.width.equalTo(@45);
+        make.height.bottom.equalTo(shouYi);
+        make.width.equalTo(@50);
         make.left.equalTo(shouYi.mas_right);
     }];
     
@@ -102,30 +103,33 @@
     sanjiao.image=[UIImage imageNamed:@"cpxq_jt"];
     [topbgView addSubview:sanjiao];
     [sanjiao mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.equalTo(@8);
+       // make.height.width.equalTo(@8);
+        make.height.mas_equalTo(sanjiao.image.size.height);
+        make.width.mas_equalTo(sanjiao.image.size.width);
         make.left.equalTo(percent.mas_right);
-        make.bottom.equalTo(percent.mas_bottom).offset(-3);
+        make.centerY.equalTo(percent);
     }];
     
-    UIImageView *bord=[[UIImageView alloc]init];
-    bord.image=[UIImage imageNamed:@"xqybj_bk"];
-    [topbgView addSubview:bord];
-    [bord mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@25);
-        make.width.equalTo(@220);
-        make.centerX.equalTo(topbgView.mas_centerX);
-        make.top.equalTo(zhengShu.mas_bottom).offset(10);
-    }];
-    
+//    UIImageView *bord=[[UIImageView alloc]init];
+//    bord.image=[UIImage imageNamed:@"xqybj_bk"];
+//    [topbgView addSubview:bord];
+//    [bord mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.equalTo(@25);
+//        make.width.equalTo(@220);
+//        make.centerX.equalTo(topbgView.mas_centerX);
+//        make.top.equalTo(zhengShu.mas_bottom).offset(10);
+//    }];
+//    
  
     UIImageView *blackSign=[[UIImageView alloc]init];
-
     blackSign.image=[UIImage imageNamed:@"cpxq_sj_ic"];
     [topbgView addSubview:blackSign];
     [blackSign mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.width.equalTo(@15);
-        make.left.equalTo(bord).offset(5);
-        make.centerY.equalTo(bord);
+        //make.height.width.equalTo(@15);
+        make.height.mas_equalTo(blackSign.image.size.height);
+        make.width.mas_equalTo(blackSign.image.size.width);
+        make.left.equalTo(topbgView.mas_left).offset(20);
+        make.top.equalTo(topbgView.mas_top).offset(15);
     }];
     UILabel *endTimeLabel=[[UILabel alloc]init];
     self.endTime=endTimeLabel;
@@ -137,7 +141,7 @@
         make.height.equalTo(@13);
         make.width.equalTo(@95);
         make.left.equalTo(blackSign.mas_right);
-        make.top.equalTo(bord.mas_top).offset(6);
+        make.centerY.equalTo(blackSign.mas_centerY);
         
     }];
   
@@ -151,7 +155,7 @@
     [jPeopleNum mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.height.equalTo(endTimeLabel);
         make.width.equalTo(@60);
-        make.right.equalTo(bord.mas_right).offset(-2);
+        make.right.equalTo(topbgView.mas_right).offset(-10);
         
     }];
     UIImageView *blackSign2=[[UIImageView alloc]init];
@@ -161,31 +165,22 @@
     [blackSign2 mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.right.equalTo(jPeopleNum.mas_left).offset(-3);
-        make.top.width.equalTo(blackSign);
-        make.height.equalTo(@12);
+        make.top.equalTo(blackSign);
+        make.height.mas_equalTo(blackSign2.image.size.height);
+        make.width.mas_equalTo(blackSign2.image.size.width);
     }];
  #pragma mark 底部
-    UIView *Tline=[[UIView alloc]init];
-    Tline.backgroundColor=UIColorFromRGB(0xfe8565);
-    self.horneLine=Tline;
-    [topbgView addSubview:Tline];
-    [Tline mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@1.3);
-        make.left.equalTo(topbgView.mas_left).offset(8);
-        make.right.equalTo(topbgView.mas_right).offset(-8);
-        make.centerY.equalTo(topbgView.mas_centerY).offset(25);
-    }];
+ 
     UILabel *QiTouJin=[[UILabel alloc]init];
     self.QITouJinEr=QiTouJin;
-    QiTouJin.font=[UIFont systemFontOfSize:14.0];
-    
+    QiTouJin.font=[UIFont systemFontOfSize:13.0];
     QiTouJin.textColor=[UIColor whiteColor];
     QiTouJin.textAlignment=NSTextAlignmentCenter;
     [topbgView addSubview:QiTouJin];
     [QiTouJin mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@14);
         make.width.equalTo(@80);
-        make.bottom.equalTo(topbgView.mas_bottom).offset(-8);
+        make.bottom.equalTo(topbgView.mas_bottom).offset(-20);
         make.centerX.equalTo(topbgView.mas_centerX).offset(-30);
         
     }];
@@ -217,7 +212,7 @@
    
     UILabel *QiXianTime=[[UILabel alloc]init];
     self.QIXian=QiXianTime;
-    QiXianTime.font=[UIFont systemFontOfSize:14.0];
+    QiXianTime.font=[UIFont systemFontOfSize:13.0];
    QiXianTime.textColor=[UIColor whiteColor];
     QiXianTime.textAlignment=NSTextAlignmentCenter;
     [topbgView addSubview:QiXianTime];
@@ -231,7 +226,7 @@
     
     UILabel *shengYuNum=[[UILabel alloc]init];
     self.SFenShu=shengYuNum;
-    shengYuNum.font=[UIFont systemFontOfSize:14.0];
+    shengYuNum.font=[UIFont systemFontOfSize:13.0];
      shengYuNum.textColor=[UIColor whiteColor];
     shengYuNum.textAlignment=NSTextAlignmentCenter;
     [topbgView addSubview:shengYuNum];
@@ -268,16 +263,17 @@
 //  }];
     
     
-    float inteval=((CMScreenW-60)-55*4)/3;
+    float inteval=((CMScreenW-80)-55*4)/3;
     for (int i=0; i<4; i++) {
         CMJuHaiPercentView  *percentView=[[CMJuHaiPercentView alloc]init];
         percentView.personer.textColor=[UIColor whiteColor];
         percentView.perecent.textColor=[UIColor whiteColor];
-        percentView.frame=CGRectMake(i%4*(55+inteval)+30,127.5, 55, 55);
+        percentView.frame=CGRectMake(i%4*(55+inteval)+40,105, 55, 55);
         [topbgView addSubview:percentView];
         switch (i) {
             case 0:
                 self.juImage1=percentView;
+               
                 self.juRen1=percentView.personer;
                 self.juShou1=percentView.perecent;
                 break;
@@ -304,18 +300,28 @@
         
     }
     
-
+    UIView *Tline=[[UIView alloc]init];
+    Tline.backgroundColor=UIColorFromRGB(0xfe8565);
+    self.horneLine=Tline;
+    Tline.hidden=YES;
+    [topbgView addSubview:Tline];
+    [Tline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@1.2);
+        make.left.equalTo(topbgView.mas_left).offset(10);
+        make.right.equalTo(topbgView.mas_right).offset(-10);
+        make.centerY.equalTo(self.juImage4.mas_centerY).offset(1);
+    }];
     UILabel *hai=[[UILabel alloc]init];
     self.HaiPeopleNum=hai;
     hai.hidden=YES;
-    hai.font=[UIFont systemFontOfSize:13.0];
+    hai.font=[UIFont fontWithName:@"HYDieYuJ" size:15.0];
     hai.textAlignment=NSTextAlignmentCenter;
     hai.textColor=UIColorFromRGB(0xfed6c8);
     [topbgView addSubview:hai];
     [hai mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.equalTo(self.juImage1.mas_bottom).offset(5);
-        make.height.equalTo(@15);
+        make.top.equalTo(self.juImage1.mas_bottom).offset(10);
+        make.height.equalTo(@16);
         make.centerX.equalTo(topbgView.mas_centerX);
         make.width.equalTo(topbgView);
 
@@ -390,7 +396,7 @@
 }
 -(void)setLiCaiDeati:(CMLiCaiDetailController *)LiCaiDeati{
     
-      [LiCaiDeati statisticalPage:[NSString stringWithFormat:@"%@+%@",[_productDict objectForKey:@"title"],self.QIXian.text]];
+      [LiCaiDeati statisticalPage:[NSString stringWithFormat:@"产品详情页+%@+%@",[_productDict objectForKey:@"title"],self.QIXian.text]];
 }
 
 @end

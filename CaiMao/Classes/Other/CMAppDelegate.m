@@ -29,13 +29,13 @@
         self.window.rootViewController=vc;
     }else{
      
-        tab=[[CMTabBarController alloc]init];
+      
         if (isJpushMessage) { // 点击通远程知启动的程序
          //   self.window.rootViewController =self.tab;
            
        }
       //  else { // 直接点击app图标启动的程序
-            self.window.rootViewController = tab;
+            self.window.rootViewController = self.tab;
             
         //}
         [self setUpLaunchAd];
@@ -71,12 +71,12 @@
    
     return YES;
 }
-//-(CMTabBarController*)tab{
-//    if(!_tab){
-//        _tab=[[CMTabBarController alloc] init];
-//    }
-//    return _tab;
-//}
+-(CMTabBarController*)tab{
+    if(!_tab){
+        _tab=[[CMTabBarController alloc] init];
+    }
+    return _tab;
+}
 
 void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void *context)
 {
@@ -89,11 +89,10 @@ void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void
 #pragma mark 键盘收回管理
 -(void)configureBoardManager{
     
-    IQKeyboardManager *manager = [IQKeyboardManager sharedManager];
-    manager.enable = YES;
-    manager.shouldResignOnTouchOutside = YES;
-    manager.shouldToolbarUsesTextFieldTintColor = YES;
-    manager.enableAutoToolbar = NO;
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    [IQKeyboardManager sharedManager].shouldToolbarUsesTextFieldTintColor = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
 }
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -176,7 +175,7 @@ void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void
         // 应用正处理前台状态下，不会收到推送消息，因此在此处需要额外处理一下
         //if([CMRequestManager islogin]){
         NSString *page=[NSString dictionaryToJson:userInfo];
-        [tab.tabBar showBadgeOnItemIndex:3];
+        [self.tab.tabBar showBadgeOnItemIndex:3];
         [CMMessageDao insertWithMessage:message andMessageUrl:urlStr andTime:str andIsread:@"1" andPage:page];
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收到推送消息"
@@ -198,7 +197,7 @@ void addressBookChanged(ABAddressBookRef addressBook, CFDictionaryRef info, void
             NSString *str=[NSString currentDateFormatter:@"yyyy/MM/dd HH:mm:ss"];
             self.userDict=userInfo;
             NSString *page=[NSString dictionaryToJson:userInfo];
-            [tab.tabBar showBadgeOnItemIndex:3];
+            [self.tab.tabBar showBadgeOnItemIndex:3];
             [CMMessageDao insertWithMessage:message andMessageUrl:urlStr andTime:str andIsread:@"1" andPage:page];
             
             self.isAppIconLaunching=NO;

@@ -83,6 +83,7 @@
 - (void)loadXinKeData
 {
     if (![self checkNetWork]) {
+        [self hiddenProgressHUD];
         [self.xinkeTableView.mj_header endRefreshing];
         
     }
@@ -148,7 +149,7 @@
 {
     UIButton *btn = (UIButton *)sender;
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=[xinArr objectAtIndex:btn.tag];
+    vc.ProuctListDict=[xinArr objectAtIndex:btn.tag];
     vc.countNum=1;
     
     [self.navigationController pushViewController:vc animated:YES];

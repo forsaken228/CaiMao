@@ -65,6 +65,7 @@
 - (void)loadDingQiBaoData
 {
     if (![self checkNetWork]) {
+           [self hiddenProgressHUD];
         [self.dingqiTableView.mj_header endRefreshing];
     }
     [CMRequestHandle GetDingQiBaoProductMsgSuccess:^(id responseObj) {
@@ -206,7 +207,7 @@ qiStr = [NSString stringWithFormat:@"期限%d天",list.jkqx];
     UIButton *btn = (UIButton *)sender;
 
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=[dingArr objectAtIndex:btn.tag];
+    vc.ProuctListDict=[dingArr objectAtIndex:btn.tag];
     vc.countNum=1;
     [self.navigationController pushViewController:vc animated:YES];
 }

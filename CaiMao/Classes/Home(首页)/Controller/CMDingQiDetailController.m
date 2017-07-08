@@ -61,6 +61,7 @@
 - (void)loadDingQiBaoData
 {
     if (![self checkNetWork]) {
+        [self hiddenProgressHUD];
         [self.dingqiTableView.mj_header endRefreshing];
       
     }
@@ -186,7 +187,7 @@
 {
     UIButton *btn = (UIButton *)sender;
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=[dingArr objectAtIndex:btn.tag];
+    vc.ProuctListDict=[dingArr objectAtIndex:btn.tag];
     vc.countNum=1;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -200,7 +201,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0){
         return 40;
     }
     return 1;

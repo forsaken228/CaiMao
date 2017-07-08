@@ -64,7 +64,7 @@
     
     self.userAccountYuEr=[CMUserDefaults objectForKey:@"YuEr"];
    //  self.userAccountYuEr=@"991.20";
-    [self getBankList];
+
     OrderNum=[NSString  stringWithFormat:@"%@",[self.orderDict  objectForKey:@"OrderNum"]];
     [self getMBiList];
     [self getLiCaiBenJinJuanList];
@@ -78,7 +78,7 @@
     self.orderDict=[[NSDictionary alloc]init];
     self.orderPayDict=[[NSDictionary alloc]init];
     
-    [self statisticalPage:[NSString stringWithFormat:@"%@+%@",self.prTitle,self.title]];
+    [self statisticalPage:[NSString stringWithFormat:@"产品购买(%@)+%@",self.title,self.prTitle]];
 }
 
 
@@ -170,7 +170,7 @@
 }
 -(void)bankListbtnClick{
     
-    CMBankList *list=[[CMBankList alloc]initCreateBankListArry:self.bankListArray];
+    CMBankList *list=[[CMBankList alloc]init];
     [list show];
     
 }
@@ -1120,23 +1120,7 @@
 [AlertLiCaiJuan dimissAlert];
     
 }
-#pragma mark 获取银行卡限额列表
--(void)getBankList{
-    
-    [CMRequestHandle requestSupportBankListMsgsuccess:^(id responseObj) {
-     
-        NSArray *result=[responseObj objectForKey:@"result"];
-        
-        for (NSDictionary *dict in result) {
-            NSArray  *listArray=[dict objectForKey:@"bankName"];
-            self.bankListArray=listArray;
-            
-        }
- 
-        
-    }];
 
-}
 
 #pragma mark 获得M币
 -(void)getMBiList{

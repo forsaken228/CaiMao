@@ -20,7 +20,7 @@
 @property(nonatomic,strong)UILabel *SFenShu;
 @property(nonatomic,strong)UILabel *ActiveDetail;
 @property(nonatomic,strong)UIView *horneLine;
-
+@property(nonatomic,strong)UILabel *shouYilab;
 
 /** 聚嗨利起始收益率 */
 @property (strong, nonatomic)  UILabel *juQiShilv;
@@ -39,7 +39,7 @@
 @property (strong, nonatomic)  UIImageView *juImage2;
 @property (strong, nonatomic)  UIImageView *juImage3;
 @property (strong, nonatomic)  UIImageView *juImage4;
-@property (strong, nonatomic)  UIImageView *hubImage;
+//@property (strong, nonatomic)  UIImageView *hubImage;
 @property (strong, nonatomic)  UIImageView *smallSj;
 @property (strong, nonatomic)  UIImageView *topBg;
 

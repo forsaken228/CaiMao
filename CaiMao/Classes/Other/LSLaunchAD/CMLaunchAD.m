@@ -7,7 +7,7 @@
 
 #import "CMLaunchAD.h"
 
-#define LSLaunchADBottomHeight 130
+//#define LSLaunchADBottomHeight 130
 @interface CMLaunchAD ()
 
 @property(nonatomic, weak) UIImageView *adImgView;
@@ -32,7 +32,8 @@
                        aDBlock:(LSLaunchADBlock)aDBlock
 
 {
-
+    float bottomHeight=CMScreenH<568?160:130;
+    
   CMLaunchAD *ad = [[CMLaunchAD alloc] init];
   ad.frame = window.bounds;
   ad.adTime = countTime;
@@ -74,7 +75,7 @@
   if (isFullScreenAD) {
     imageViewHeight = viewSize.height;
   } else {
-    imageViewHeight = viewSize.height - LSLaunchADBottomHeight;
+    imageViewHeight = viewSize.height - bottomHeight;
   }
   adImageView.frame = CGRectMake(0, 0, viewSize.width, imageViewHeight);
   if (canClickAD) {

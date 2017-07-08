@@ -438,7 +438,7 @@
     UIButton *btn = (UIButton *)sender;
 
     CMPayViewController *vc=[[CMPayViewController alloc]init];
-    vc.ProuctListArr=self.isZaoChang == YES ? [upArr objectAtIndex:btn.tag] : [downArr objectAtIndex:btn.tag];
+    vc.ProuctListDict=self.isZaoChang == YES ? [upArr objectAtIndex:btn.tag] : [downArr objectAtIndex:btn.tag];
     vc.countNum=1;
     [self.navigationController pushViewController:vc animated:YES];
 }

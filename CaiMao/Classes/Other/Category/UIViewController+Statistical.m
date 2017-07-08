@@ -248,6 +248,10 @@
     
     if ([platform isEqualToString:@"iPhone9,2"]) return @"iPhone 7 Plus";
     
+    if ([platform isEqualToString:@"iPhone9,3"]) return @"美版、台版iPhone 7";
+    
+    if ([platform isEqualToString:@"iPhone9,4"]) return @"美版、台版iPhone 7 Plus";
+    
     if ([platform isEqualToString:@"iPod1,1"])   return @"iPod Touch 1G";
     
     if ([platform isEqualToString:@"iPod2,1"])   return @"iPod Touch 2G";

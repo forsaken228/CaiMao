@@ -31,27 +31,10 @@
     [super viewDidLoad];
     self.title=@"银行卡认证";
     self.view.backgroundColor=ViewBackColor;
-    [self getBankInfoList];
-    //创建表视图
-
+    [self getBankList];
     
-   // for (NSDictionary *dict in self.userMessageArray) {
-   // NSDictionary *dict=self.userMessageArray.firstObject;
-      //  NSString *usebank=[dict objectForKey:@"BankNumber"];
-       // self.UseBankNumber=usebank;
-    
-  //}
-  
-      //  self.phoneNum=[CMUserDefaults objectForKey:@"name"];
+    [self.view addSubview:self.SelfTableView];
 
-   // self.SelfTableView.mj_header = [CMRefreshHeader headerWithRefreshingBlock:^{
-            [self getBankList];
-           // [self loginAuto];
-   // }];
-[self.view addSubview:self.SelfTableView];
-     // [self.SelfTableView.mj_header beginRefreshing];
-     //self.userName=[self.userMsg objectForKey:@"name"];
-     //self.userID=[self.userMsg objectForKey:@"nameID"];
 }
 
 
@@ -198,8 +181,7 @@
 #pragma mark 支持银行卡
 -(void)supportBankCard{
     
-    CMBankList *list=[[CMBankList alloc]initCreateBankListArry:self.bankListArray];
-    list.delegate=self;
+    CMBankList *list=[[CMBankList alloc]init];
     [list show];
     
 }
@@ -240,15 +222,15 @@
         return;
     }
 
-    NSLog(@"---%@---%@--%@---%@",userCell.tBankNum.text,userCell.realName.text,userCell.realNameId.text,[CMUserDefaults objectForKey:@"userID"]);
+   // NSLog(@"---%@---%@--%@---%@",userCell.tBankNum.text,userCell.realName.text,userCell.realNameId.text,[CMUserDefaults objectForKey:@"userID"]);
 
   NSString *name=[userCell.realName.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
         //renzheng===该身份证号已经在财猫网通过实名认证，您不能再用该身份证进行认证！
        //9558800200135073266---李甜--610526199006054620---654144
-
   [[CMOrderCreat sharedAPI ]requestBankSureOrderMessageWithBankNum:userCell.tBankNum.text andHYID:[CMUserDefaults objectForKey:@"userID"] andUserName:name andUserID:userCell.realNameId.text success:^(id responseObj) {
-        NSLog(@"renzheng===%@===%@",[responseObj objectForKey:@"Result"],responseObj);
+     //   NSLog(@"renzheng===%@===%@",[responseObj objectForKey:@"Result"],responseObj);
+      
       NSString*msg=[responseObj objectForKey:@"Result"];
       if (msg.length>0||![msg isEqualToString:@""]) {
           
@@ -275,11 +257,11 @@
     
       
       NSDictionary *orderDict= [CMOrderHandle creatRechargeOrderWithPartner:BusPartner andOrderTime:FormateCreateOrderTime andOrderNum:OrderNum andOrderMoney:@"1" andOrderName:ProductName andOrderInfo:OrderInfo andOrderValid:OrderExpireSpan andUserRegistDate:registDate WithUserName:userCell.realName.text WithUserPhone:[CMUserDefaults objectForKey:@"name"] andUserCardID:userCell.realNameId.text andUserBankID:userCell.tBankNum.text];
-      DLog(@"orderDict+++%@",orderDict);
+     // DLog(@"orderDict+++%@",orderDict);
       [CMOrderHandle CMorderManagerFromLLSdkWithOrderDict:orderDict PersentController:self];
       
       CMOrderHandle.resultBlock=^(LLPayResult resultCode,NSDictionary*resultDict){
-          NSLog(@"resultCode==%u,dic==%@",resultCode,resultDict);
+      //    NSLog(@"resultCode==%u,dic==%@",resultCode,resultDict);
           
           self.errorMsg=[resultDict objectForKey:@"ret_code"];
           NSString *name=[resultDict objectForKey:@"ret_msg"];
@@ -524,7 +506,7 @@ CMAlertView *alert=[[CMAlertView alloc]initWithCancleButtonTitle:@"知道了" Wi
             [self HidHubTacit];
             //[self.SelfTableView.mj_header endRefreshing];
             self.NewArr=(NSArray*)[responseObj objectForKey:@"result"];
-            DLog(@"+++%@",self.NewArr);
+         //   DLog(@"+++%@",self.NewArr);
             NSDictionary *dic=[self.NewArr firstObject];
             //DLog(@"renzheng===%@",self.NewBankArr);
             NSString *name=[dic objectForKey:@"name"];
@@ -558,21 +540,7 @@ CMAlertView *alert=[[CMAlertView alloc]initWithCancleButtonTitle:@"知道了" Wi
 
 
 
--(void)getBankInfoList{
-    
-    
-    [CMRequestHandle requestSupportBankListMsgsuccess:^(id responseObj) {
-        
-        NSArray *result=[responseObj objectForKey:@"result"];
-        
-        for (NSDictionary *dict in result) {
-            NSArray  *listArray=[dict objectForKey:@"bankName"];
-            self.bankListArray=listArray;
-            
-        }
-        
-        
-    }];}
+
 
 /*
 

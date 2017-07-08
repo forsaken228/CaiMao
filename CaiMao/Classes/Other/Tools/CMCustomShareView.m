@@ -25,6 +25,14 @@
     }
     return self;
 }
+
+-(void)showShareView{
+    
+    UIWindow *window = [UIApplication  sharedApplication].keyWindow;
+    
+    [window addSubview:self];
+
+}
 -(void)addView{
     
     [self addSubview:self.bgView];

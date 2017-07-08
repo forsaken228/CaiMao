@@ -15,5 +15,5 @@
 @property (nonatomic,copy) NSString *contentStr; //n内容
 @property (nonatomic,strong) NSArray *ShareImageName; //n内容
 - (void)remove;
-
+-(void)showShareView;
 @end

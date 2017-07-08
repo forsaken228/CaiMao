@@ -15,15 +15,18 @@
     zhuan.text=aTitle;
     zhuan.textColor=[UIColor whiteColor];
     zhuan.font=[UIFont systemFontOfSize:18.0];
+    zhuan.textAlignment=NSTextAlignmentCenter;
     [self addSubview:zhuan];
+    CGRect rect=[ aTitle boundingRectWithSize:CGSizeMake(MAXFLOAT, 18) options:NSStringDrawingUsesFontLeading |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18.0]} context:nil];
+   
     [zhuan mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.mas_centerY);
-        make.left.equalTo(self.mas_centerX);
+        make.centerX.equalTo(self.mas_centerX);
         make.height.equalTo(@20);
-        make.width.equalTo(@80);
+        make.width.mas_equalTo(rect.size.width+2);
     }];
     
-UIImage *tImage=[UIImage imageNamed:ahedImage];
+  UIImage *tImage=[UIImage imageNamed:ahedImage];
    UIImageView *imageView=[[UIImageView alloc]init];
     imageView.image=tImage;
     [self addSubview:imageView];

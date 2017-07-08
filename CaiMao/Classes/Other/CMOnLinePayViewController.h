@@ -22,7 +22,6 @@
 
 @property(nonatomic,strong)NSArray *bankArr;
 
-@property(nonatomic,strong)NSArray *bankListArray;
 
 
 @property(nonatomic,strong)NSDictionary *orderDict;

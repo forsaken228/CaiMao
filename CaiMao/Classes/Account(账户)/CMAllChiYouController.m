@@ -269,6 +269,7 @@
     }
     
 }
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #pragma mark  请求数据
 -(void)requestDate{
      NSString *page=[NSString stringWithFormat:@"%d",_pageIndex++];

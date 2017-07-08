@@ -60,7 +60,7 @@
 
 -(void)LoadProgress:(UIView*)showView WithMessage:(NSString *)message{
     
-    
+   dispatch_async(dispatch_get_main_queue(), ^{
    self.ProgressHUD = [[MBProgressHUD alloc] initWithView:showView];
      self.ProgressHUD.color=ViewBackColor;
      self.ProgressHUD.alpha=0.5;
@@ -88,7 +88,7 @@
 
     }];
       
-        
+       });
    
     
 }

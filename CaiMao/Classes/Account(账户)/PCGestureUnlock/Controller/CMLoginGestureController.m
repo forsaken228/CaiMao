@@ -89,7 +89,7 @@
     [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(Image.size.height);
         make.width.mas_equalTo(Image.size.width);
-        make.top.equalTo(self.view.mas_top).offset(60);
+        make.top.equalTo(self.view.mas_top).offset(50);
         make.centerX.equalTo(self.view.mas_centerX);
     }];
     }else{
@@ -97,7 +97,7 @@
         [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(Image.size.height);
             make.width.mas_equalTo(Image.size.width);
-            make.top.equalTo(self.view.mas_top).offset(20);
+            make.top.equalTo(self.view.mas_top).offset(10);
             make.centerX.equalTo(self.view.mas_centerX);
         }];
     }

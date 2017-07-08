@@ -239,10 +239,10 @@
     NSString *pid=[NSString stringWithFormat:@"%d",VIPModel.pid];
   
         [CMRequestHandle getProductListWithUserID:[CMUserDefaults objectForKey:@"userID"] andProductId:pid andSuccess:^(id responseObj) {
-            DLog(@"+++%@",responseObj);
+           // DLog(@"+++%@",responseObj);
             if ([[responseObj objectForKey:@"Status"]intValue]==200) {
                 CMPayViewController *vc=[[CMPayViewController alloc]init];
-                vc.ProuctListArr=[responseObj objectForKey:@"t"];
+                vc.ProuctListDict=[responseObj objectForKey:@"t"];
                 if ([cell.buttonView.textField.text intValue]==0) {
                     vc.countNum=1;
                 }else{
@@ -274,6 +274,7 @@
     [self.navigationController pushViewController:vc animated:YES];
 
 }
+
 
 
 

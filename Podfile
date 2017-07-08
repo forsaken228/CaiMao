@@ -10,7 +10,7 @@ target 'CaiMao' do
  pod 'MBProgressHUD', '~> 0.9.2'
  pod 'SDWebImage', '~>3.7.4'
  pod 'MJRefresh', '~> 3.1.12'
- pod 'AFNetworking', '~> 3.0'
+ pod 'AFNetworking', '~> 3.1.0'
  pod 'MJExtension', '~> 3.0.13'
  pod 'JPush', '~> 3.0.5'
  pod 'AMapLocation'
